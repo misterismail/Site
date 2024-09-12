@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 90%;
+  margin: 0;
+}
+.flex_column {
+  margin: 22rem;
+}
+
+.usuarios-acessos.userManagementSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebeb;
+  overflow: hidden;
+  min-height: 100vh;
+}
+.usuarios-acessos .flex_col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px 0;
+  margin: 1rem 0;
+}
+.usuarios-acessos .flex_col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+  width: 96.98%;
+}
+.usuarios-acessos .group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.usuarios-acessos .userStatusBlock {
+  position: relative;
+  min-height: 86px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 2px solid #7b0ae6;
+}
+.usuarios-acessos .flex_row {
+  position: absolute;
+  padding: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
+  width: 100%;
+  height: 100%;
+}
+.usuarios-acessos .image1 {
+  margin-top: 17px;
+  width: 206px;
+  min-width: 0;
+}
+.usuarios-acessos .flex_row1 {
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
+  min-width: 0;
+}
+.usuarios-acessos .image6 {
+  width: 74px;
+  min-width: 0;
+}
+.usuarios-acessos .image7 {
+  width: 72px;
+  margin-top: -4px;
+  min-width: 0;
+}
+.usuarios-acessos .image9 {
+  width: 60px;
+  min-width: 0;
+}
+.usuarios-acessos .image8 {
+  width: 51px;
+  min-width: 0;
+}
+.usuarios-acessos .flex_col2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  gap: 25px 0;
+  
+}
+.usuarios-acessos .flex_col9 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  
+}
+.usuarios-acessos .flex_row2 {
+  display: flex;
+  align-self: flex-start;
+  gap: 0 17px;
+  width: 100%;
+}
+.usuarios-acessos .group1, .group3, .group5, .group8 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2px;
+  width: 33%;
+  min-width: 0;
+}
+.usuarios-acessos .group8 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2px;
+  width: 100%;
+  min-width: 0;
+}
+.usuarios-acessos .userAccessBlock {
+  position: relative;
+  min-height: 417px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .flex_col3, .flex_col4, .flex_col5 {
+  position: absolute;
+  padding-bottom: 1rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.usuarios-acessos .createUserTitle, .updateUserTitle, .deleteUserTitle {
+  display: flex;
+  justify-content: center;
+  font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: center;
+}
+.usuarios-acessos .flex_row3,.flex_row4, .flex_row5, .flex_row6 {
+  display: flex;
+  align-items: center;
+  justify-items: right;
+  gap: 0 16px;
+  margin: 47px 0 0;
+  width: 100%;
+}
+.usuarios-acessos .createUserHeader, .updateUserHeader, .deleteUserHeader {
+  display: flex;
+  padding-left: 10px;
+  justify-content: flex-start;
+  min-width: 125;
+  font: 400 28px/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: right;
+}
+.usuarios-acessos .block8 {
+  display: block;
+  width: 334px;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+}
+.usuarios-acessos .accessLevelHeader, .updateAccessLevelHeader {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 0;
+  max-width: 125px;
+  font: 400 28px/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: #010101;
+  text-align: right;
+}
+.usuarios-acessos .image2 {
+  margin: 2px 0 17px;
+  width: 334px;
+  min-width: 0;
+}
+.usuarios-acessos .group2, .group4, .group7 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 24px 0 0;
+  width: 65.49%;
+}
+.usuarios-acessos .block10 {
+  position: relative;
+  display: block;
+  min-height: 73px;
+  background-color: #02a125;
+  border-radius: 15px;
+}
+.usuarios-acessos .confirmTitle, .resetPasswordTitle, .deleteConfirmationTitle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font: 400 38px/1.21 "Inria Sans", Helvetica, Arial, serif;
+  color: white;
+  text-align: right;
+}
+.usuarios-acessos .updateUserBlock {
+  position: relative;
+  min-height: 419px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .image21 {
+  width: 334px;
+  min-width: 0;
+}
+.usuarios-acessos .block4 {
+  position: relative;
+  display: block;
+  min-height: 73px;
+  background-color: #7b0ae6;
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+}
+.usuarios-acessos .deleteUserBlock {
+  position: relative;
+  min-height: 285px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .searchUserBlock {
+  position: relative;
+  min-height: 115px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .flex_row9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+  width: 100%;
+}
+.usuarios-acessos .block11 {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+}
+.usuarios-acessos .block6 {
+  position: relative;
+  display: block;
+  min-height: 73px;
+  background-color: #a10702;
+  border-radius: 15px;
+  outline: 3px solid #a10702;
+  outline-offset: -3px;
+}
+.usuarios-acessos #block9 {
+  display: block;
+  padding-left: 15px;
+  width: 100%;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+}
+.usuarios-acessos .group6 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.usuarios-acessos .group12 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.usuarios-acessos .imageBlock {
+  position: relative;
+  min-height: 310px;
+  background-color: white;
+  border-radius: 15px;
+  outline: 0.5px solid #010101;
+}
+.usuarios-acessos .flex_row7 {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  display: flex;
+  gap: 0 9px;
+  width: 220px;
+  height: 56px;
+}
+.usuarios-acessos .image4 {
+  width: 56px;
+  min-width: 0;
+}
+.usuarios-acessos .hero_title2 {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 6px;
+  min-width: 0;
+  font: 400 42px/1.19 "Inria Sans", Helvetica, Arial, serif;
+  color: #7b0ae6;
+  text-align: center;
+}
+.usuarios-acessos .developerInfoBlock {
+  position: relative;
+  min-height: 55px;
+  background-color: #010101;
+}
+.usuarios-acessos .flex_row8 {
+  position: absolute;
+  top: -1px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
+  width: 328px;
+  height: 56px;
+}
+.usuarios-acessos .developedByTitle {
+  min-width: 0;
+  font: 300 35px/1.2 "Inria Sans", Helvetica, Arial, serif;
+  color: #ebebeb;
+}
+.usuarios-acessos .image {
+  width: 91px;
+  min-width: 0;
+}
+.usuarios-acessos .image5 {
+  position: absolute;
+  inset: 437px 28px 526px 1170px;
+  width: 722px;
+  height: 117px;
+}
+#block11 {
+  display: block;
+  padding-left: 60px;
+  width: 100%;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+}
+#block8 {
+  display: block;
+  padding-left: 15px;
+  width: 100%;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+}
+
+#block12 {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 73px;
+  min-height: 73px;
+  background-color: rgba(123, 10, 230, 0);
+  border-radius: 15px;
+  outline: 3px solid #7b0ae6;
+  outline-offset: -3px;
+  font-size: large;
+  padding: 0 15px;
+}
+.usuarios-acessos .image10 {
+  position: absolute;
+  display: block;
+  left: 25px;
+  align-content: flex-start;
+  z-index: 1;
+  min-width: 0;
+}
+

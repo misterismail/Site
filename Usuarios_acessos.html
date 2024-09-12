@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/Usuarios_acessos.css" />
+
+
+
+
+</head>
+
+<body class="flex-column">
+
+    <section class="usuarios-acessos userManagementSection">
+        <!-- Main section for user management features. -->
+        <div class="flex_col">
+            <div class="flex_col1">
+                <div class="group">
+                    <div class="userStatusBlock"></div>
+                    <!-- Block indicating the user status. -->
+                    <div class="flex_row">
+                        <a href=".\index.html"><img class="image1" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                        <div class="flex_row1">
+                            <a href=".\index.html"><img src="./assets/voltar.png" class="image6"></a>
+                            <img class="image7" src="./assets/perfil.png" alt="alt text" />
+                            <img class="image9" src="./assets/config.png" alt="alt text" />
+                            <img class="image8" src="./assets/sair.png" alt="alt text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_col2">
+                    <div class="flex_row2">
+                        <div class="group1">
+                            <div class="userAccessBlock"></div>
+                            <!-- Block indicating user access level. -->
+                            <div class="flex_col3">
+                                <h1 class="createUserTitle">
+                                    <!-- Title for creating a new user. -->
+                                    CRIAR USUARIO
+                                </h1>
+                                <div class="flex_row3">
+                                    <h1 class="createUserHeader">
+                                        <!-- Header for user input during user creation. -->
+                                        USUARIO:
+                                    </h1>
+                                    <input type="text" id='block8'/>
+                                </div>
+                                <div class="flex_row4">
+                                    <h1 class="accessLevelHeader">
+                                        <!-- Header for access level input during user creation. -->
+                                        NIVEL DE ACESSO:
+                                    </h1>
+                                    <select id="block12" name="ocean-target" required>
+                                        <option value="" disabled selected>Selecione um nome</option>
+                                        <option value="Antártico">Estagiário</option>
+                                        <option value="Ártico">CEO</option>
+                                        <option value="Atlântico Norte">Gerente</option>
+                                        <option value="Atlântico Sul">Assistente</option>
+                                        <option value="Índico">Operador</option>
+                                        <option value="Pacífico Norte">Diretor</option>
+                                    </select>
+                                </div>
+                                <div class="group2">
+                                    <color class="block10"></color>
+                                    <h1 class="confirmTitle">
+                                        <!-- Title for confirmation section. -->
+                                        CONFIRMAR
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group3">
+                            <div class="updateUserBlock"></div>
+                            <!-- Block related to the updating user process. -->
+                            <div class="flex_col4">
+                                <h1 class="updateUserTitle">
+                                    <!-- Title for updating a user. -->
+                                    ATUALIZAR USUARIO
+                                </h1>
+                                <div class="flex_row5">
+                                    <h1 class="updateUserHeader">
+                                        <!-- Header for user input during user update. -->
+                                        USUARIO:
+                                    </h1>
+                                    <select id="block12" name="ocean-target" required>
+                                        <option value="" disabled selected>Selecione um nome</option>
+                                        <option value="Antártico">João</option>
+                                        <option value="Ártico">Pedro</option>
+                                        <option value="Atlântico Norte">Amanda</option>
+                                        <option value="Atlântico Sul">Renan</option>
+                                        <option value="Índico">Mahmoud</option>
+                                        <option value="Pacífico Norte">Victório</option>
+                                    </select>
+                                </div>
+                                <div class="flex_row4">
+                                    <h1 class="updateAccessLevelHeader">
+                                        <!-- Header for access level input during user update. -->
+                                        NIVEL DE ACESSO:
+                                    </h1>
+                                    <select id="block12" name="ocean-target" required>
+                                        <option value="" disabled selected>Selecione um nome</option>
+                                        <option value="Antártico">Estagiário</option>
+                                        <option value="Ártico">CEO</option>
+                                        <option value="Atlântico Norte">Gerente</option>
+                                        <option value="Atlântico Sul">Assistente</option>
+                                        <option value="Índico">Operador</option>
+                                        <option value="Pacífico Norte">Diretor</option>
+                                    </select>
+                                </div>
+                                <div class="group4">
+                                    <color class="block4"></color>
+                                    <h1 class="resetPasswordTitle">
+                                        <!-- Title for the password reset section. -->
+                                        REDEFINIR SENHA
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group5">
+                            <div class="flex_col9">    
+                                <div class="deleteUserBlock"></div>
+                                <!-- Block related to delete user structure. -->
+                                <div class="flex_col5">
+                                    <h1 class="deleteUserTitle">
+                                        <!-- Title for deleting a user. -->
+                                        DELETAR  USUARIO
+                                    </h1>
+                                    <div class="flex_row6">
+                                        <h1 class="deleteUserHeader">
+                                            <!-- Header for user input during user deletion. -->
+                                            USUARIO:
+                                        </h1>
+                                        <input type="text" id='block9'/>
+                                    </div>
+                                    <div class="group7">
+                                        <color class="block6"></color>
+                                        <h1 class="deleteConfirmationTitle">
+                                            <!-- Title for confirmation of user deletion. -->
+                                            DELETAR
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div class="group8">
+                                    <div class="searchUserBlock"></div>
+                                    <!-- Block related to delete user structure. -->
+                                    <div class="flex_col5">
+                                        <div class="flex_row9">
+                                            <img class="image10" src=".\assets\pesquisa.png" alt="Busca">
+                                            <input type="text" id='block11' placeholder="Buscar..."/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        
+                    </div>
+                    <div class="group6">
+                        <div class="imageBlock"></div>
+                        <!-- Block for image display. -->
+                        <div class="flex_row7">
+                            <img class="image4" src="./assets/seta_esquerda.png" alt="alt text" />
+                            <h1 class="hero_title2">1</h1>
+                            <h1 class="hero_title2">2</h1>
+                            <h1 class="hero_title2">...</h1>
+                            <img class="image4" src="./assets/seta_direita.png" alt="alt text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group12">
+                <div class="developerInfoBlock"></div>
+                <!-- Block for showing developer information. -->
+                <div class="flex_row8">
+                    <h1 class="developedByTitle">
+                        <!-- Title indicating the developer. -->
+                        DEVELOPED BY
+                    </h1>
+                    <img class="image" src="./assets/logoiHumanTech.png" alt="alt text" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

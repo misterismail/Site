@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/Calenderio.css" />
+
+
+
+
+</head>
+
+<body class="home_page">
+
+    <section class="home_geral">
+        <!-- Main section for user management features. -->
+        <div class="conteudo-home">
+            <div class="corpo">
+                <!-- cabeçalho -->
+                <div class="cabecalho">
+                    <div class="barraSuperior"></div>
+                    <!-- Block indicating the user status. -->
+                    <div class="info_cabecalho">
+                        <a href=".\index.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                        <div class="icones_cabecalho">
+                            <a href=".\index.html"><img class="voltar" src="./assets/voltar.png"></a>
+                            <a href="./Usuarios_acessos.html"><img class="perfil" src="./assets/perfil.png" alt="alt text" /></a>
+                            <img class="config" src="./assets/config.png" alt="alt text" />
+                            <img class="sair" src="./assets/sair.png" alt="alt text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="colunas">
+                    <div class="caixa_botoes">
+                        <div class="fundo_caixa"></div>
+                        <!-- Block indicating user access level. -->
+                        <div class="prox_eventos">
+                            <color class="roxo_meuseventos">
+                                <h1 class="eventos_Titulo">
+                                    <!-- Title for confirmation section. -->
+                                    EDITAR EVENTO
+                                </h1>
+                            </color>
+                            <div class="itens_evento">
+                                <div class="Training">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Training:
+                                    </h1>
+                                    <input type="text" id='caixa_roxa'/>
+                                </div>
+                                <div class="Responsavel">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Responsavel:
+                                    </h1>
+                                    <input type="text" id='caixa_roxa'/>
+                                </div>
+                                <div class="Tipo">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Tipo:
+                                    </h1>
+                                    <select id="caixa_roxa" name="setor" required>
+                                        <option value="" disabled selected>Selecione um setor</option>
+                                        <option value="Antártico">Compras</option>
+                                        <option value="Ártico">Vendas</option>
+                                        <option value="Atlântico Norte">Malas</option>
+                                        <option value="Atlântico Sul">Treinamentos</option>
+                                        <option value="Índico">Financeiro</option>
+                                        <option value="Pacífico Norte">Produtos</option>
+                                    </select>
+                                </div>
+                                <div class="Area">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Área:
+                                    </h1>
+                                    <input type="text" id='caixa_roxa'/>
+                                </div>
+                                <div class="Formato">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Formato:
+                                    </h1>
+                                    <select id="caixa_roxa" name="setor" required>
+                                        <option value="" disabled selected>Selecione um setor</option>
+                                        <option value="Antártico">Compras</option>
+                                        <option value="Ártico">Vendas</option>
+                                        <option value="Atlântico Norte">Malas</option>
+                                        <option value="Atlântico Sul">Treinamentos</option>
+                                        <option value="Índico">Financeiro</option>
+                                        <option value="Pacífico Norte">Produtos</option>
+                                    </select>
+                                </div>
+                                <div class="Localidade">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Localidade:
+                                    </h1>
+                                    <select id="caixa_roxa" name="setor" required>
+                                        <option value="" disabled selected>Selecione um setor</option>
+                                        <option value="Antártico">Compras</option>
+                                        <option value="Ártico">Vendas</option>
+                                        <option value="Atlântico Norte">Malas</option>
+                                        <option value="Atlântico Sul">Treinamentos</option>
+                                        <option value="Índico">Financeiro</option>
+                                        <option value="Pacífico Norte">Produtos</option>
+                                    </select>
+                                </div>
+                                <div class="Data">
+                                    <h1 class="Nome">
+                                        <!-- Header for user input during user creation. -->
+                                        Data:
+                                    </h1>
+                                    <input type="date" id="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                                </div>
+                            </div>
+                            <div class="botao_novo">
+                                <color class="verde"></color>
+                                <h1 class="novo_evento">
+                                    <!-- Title for confirmation section. -->
+                                    SALVAR
+                                </h1>
+                            </div>
+                        </div>
+
+                        
+                        <div class="meus_eventos_botao">
+                            <a href="./Calendario_meuseventos.html"><color class="roxo"></color></a>
+                            <a class="Botao_eventos"href="./Calendario_meuseventos.html">Voltar</a>
+                                <!-- Title for confirmation section. -->
+                        </div>
+                    </div>
+                    <div class="caixa_calendario">
+                        <div class="fundo_calendario">
+                            <color class="roxo_calendario">
+                                <h1 class="calendarioTitle">
+                                    <!-- Title for confirmation section. -->
+                                    CALENDÁRIO
+                                </h1>
+                            </color>
+                            
+                        </div>
+                        <!-- Block indicating user access level. -->
+                        
+
+                    </div>
+                        
+                    
+                </div>
+                
+            </div>
+            <div class="rodape">
+                <div class="fundo_rodape"></div>
+                <!-- Block for showing developer information. -->
+                <div class="barraInferior">
+                    <h1 class="desenvolvidoPor">
+                        <!-- Title indicating the developer. -->
+                        DEVELOPED BY
+                    </h1>
+                    <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

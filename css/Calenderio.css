@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+ .home_geral {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ebebeb;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+ .conteudo-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px 0;
+    margin: 1rem 0;
+  }
+  .corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    width: 96.98%;
+  }
+  .cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .barraSuperior {
+    position: relative;
+    min-height: 86px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 2px solid #7b0ae6;
+  }
+  .info_cabecalho {
+    position: absolute;
+    padding: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .logoSanofi {
+    margin-top: 17px;
+    width: 206px;
+    min-width: 0;
+  }
+  .icones_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    min-width: 0;
+  }
+  .perfil {
+    width: 72px;
+    min-width: 0;
+  }
+  .config {
+    width: 60px;
+    min-width: 0;
+  }
+  .sair {
+    width: 51px;
+    min-width: 0;
+  }
+  .editar {
+    width: 31px;
+    min-width: 0;
+  }
+  .colunas {
+    display: flex;
+    align-self: flex-start;
+    width: 100%;
+    gap: 0 17px;
+  }
+  .caixa_botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 30%;
+    min-width: 0;
+  }
+  .fundo_caixa {
+    position: relative;
+    min-height: 699px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .prox_eventos {
+    min-height: 699px;
+    position: absolute;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .prox_eventos_titulo {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  .meus_eventos_botao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 24px 0 0;
+    width: 100%;
+  }
+  .meus_eventos {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    margin: 24px 0 0;
+    margin-right: 100px;
+    width: 100%;
+  }
+  .roxo {
+    position: relative;
+    display: block;
+    min-height: 73px;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+  }
+  .roxo_calendario {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 120px;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+  }
+  .roxo_meuseventos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 75px;
+    background-color: #7b0ae6;
+    border-radius: 15px;
+    width: 100%;
+  }
+  .botao_novo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 24px 0 0;
+    width: 75.49%;
+    bottom: 12px;
+  }
+  .verde {
+    position: relative;
+    display: block;
+    min-height: 60px;
+    background-color: #02a125;
+    border-radius: 15px;
+  }
+  .novo_evento {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 36px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .calendarioTitle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 800 56px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .eventos_Titulo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 42px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .Training, .Responsavel, .Tipo, .Area, .Formato, .Localidade, .Data {
+    display: flex;
+    align-items: center;
+    justify-items: right;
+    gap: 0 36px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    width: 100%;
+  }
+  .Nome {
+    display: flex;
+    justify-content: flex-start;
+    min-width: 155;
+    width: 200px;
+    font: 400 28px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: right;
+  }
+  #caixa_roxa {
+    display: block;
+    padding-left: 10px;
+    padding-right: 15px;
+    width: 75%;
+    min-width: 0;
+    height: 53px;
+    min-height: 53px;
+    background-color: rgba(123, 10, 230, 0);
+    border-radius: 15px;
+    outline: 3px solid #7b0ae6;
+    outline-offset: -3px;
+    font-size: large;
+  }
+  .Botao_eventos {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 38px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .caixa_calendario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 70%;
+    min-width: 0;
+  }
+  .fundo_calendario {
+    position: relative;
+    min-height: 795px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .rodape {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .fundo_rodape {
+    position: relative;
+    min-height: 55px;
+    background-color: #010101;
+  }
+  .barraInferior {
+    position: absolute;
+    top: -1px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    width: 328px;
+    height: 56px;
+  }
+  .desenvolvidoPor {
+    min-width: 0;
+    font: 300 35px/1.2 "Inria Sans", Helvetica, Arial, serif;
+    color: #ebebeb;
+  }
+  .logoiHumanTech {
+    width: 91px;
+    min-width: 0;
+  }
+

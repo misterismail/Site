@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+ .home_geral {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ebebeb;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+ .conteudo-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px 0;
+    margin: 1rem 0;
+  }
+  .corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    width: 96.98%;
+  }
+  .cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .barraSuperior {
+    position: relative;
+    min-height: 86px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 2px solid #7b0ae6;
+  }
+  .info_cabecalho {
+    position: absolute;
+    padding: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .logoSanofi {
+    margin-top: 13px;
+    width: 206px;
+    min-width: 0;
+  }
+  .icones_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    min-width: 0;
+  }
+  .perfil {
+    width: 72px;
+    min-width: 0;
+  }
+  .config {
+    width: 60px;
+    min-width: 0;
+  }
+  .sair {
+    width: 51px;
+    min-width: 0;
+  }
+  .esquerda {
+    display: flex;
+    align-self: flex-start;
+    gap: 0 17px;
+    width: 100%;
+  }
+  .caixa_botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 30%;
+    min-width: 0;
+  }
+  .fundo_caixa {
+    position: relative;
+    min-height: 560px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .proxEvento {
+    margin-top: 15px;
+    padding-top: 5px;
+    position: relative;
+    min-height: 220px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .botoes_paginas {
+    position: absolute;
+    padding-bottom: 1rem;
+    padding-left:  1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .proxEventoTitulo {
+    display: flex;
+    justify-content: center;
+    font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  .caixa_calendario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 70%;
+    min-width: 0;
+  }
+  .fundo_calendario {
+    position: relative;
+    min-height: 795px;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .rodape {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .fundo_rodape {
+    position: relative;
+    min-height: 55px;
+    background-color: #010101;
+  }
+  .barraInferior {
+    position: absolute;
+    top: -1px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    width: 328px;
+    height: 56px;
+  }
+  .desenvolvidoPor {
+    min-width: 0;
+    font: 300 35px/1.2 "Inria Sans", Helvetica, Arial, serif;
+    color: #ebebeb;
+  }
+  .logoiHumanTech {
+    width: 91px;
+    min-width: 0;
+  }
+  .conf_malas, .calendario, .conf_agil, .dash_agil {
+    width: 85%;
+    margin-left: 39px;
+  }
