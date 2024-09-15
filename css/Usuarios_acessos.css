@@ -135,7 +135,7 @@ html, body {
   color: #010101;
   text-align: center;
 }
-.usuarios-acessos .flex_row3,.flex_row4, .flex_row5 {
+.usuarios-acessos .flex_row3,.flex_row4, .flex_row5, .flex_row6 {
   display: flex;
   align-items: center;
   justify-items: center;
@@ -226,7 +226,7 @@ html, body {
   align-items: center;
   justify-content: center;
 }
-#block112 {
+.block112 {
   display: block;
   width: 25vw;
   height: 8vh;
@@ -234,6 +234,9 @@ html, body {
   border-radius: 15px;
   border-color: transparent;
   font-size: large;
+}
+.block112:focus {
+  outline: transparent;
 }
 .usuarios-acessos .image10 {
   position: relative;
