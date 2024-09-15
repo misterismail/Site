@@ -5,90 +5,292 @@
 <head>
 
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
 
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/Calenderio.css" />
+    <link rel="stylesheet" type="text/css" href="./css/viewCalendario.css" />
 
-
-
+    <script src="/js/calendarioView.js" defer></script>
+    <script src="/js/exit.js" defer></script>
+    <script src="/js/calendarioAbas.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 
 </head>
 
 <body class="home_page">
 
-    <section class="home_geral">
-        <!-- Main section for user management features. -->
-        <div class="conteudo-home">
-            <div class="corpo">
-                <!-- cabeçalho -->
-                <div class="cabecalho">
-                    <div class="barraSuperior"></div>
-                    <!-- Block indicating the user status. -->
-                    <div class="info_cabecalho">
-                        <a href=".\index.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
-                        <div class="icones_cabecalho">
-                            <a href=".\index.html"><img class="voltar" src="./assets/voltar.png"></a>
-                            <a href="./Usuarios_acessos.html"><img class="perfil" src="./assets/perfil.png" alt="alt text" /></a>
-                            <img class="config" src="./assets/config.png" alt="alt text" />
-                            <img class="sair" src="./assets/sair.png" alt="alt text" />
-                        </div>
-                    </div>
-                </div>
-                <div class="colunas">
-                    <div class="caixa_botoes">
-                        <div class="fundo_caixa"></div>
-                        <!-- Block indicating user access level. -->
-                        <div class="prox_eventos">
-                            <h1 class="prox_eventos_titulo">
-                                <!-- Title for updating a user. -->
-                                Próximos eventos:
-                            </h1>
-                        </div>
-
-
-                        <div class="meus_eventos_botao">
-                            <a href="./Calendario_meuseventos.html"><color class="roxo"></color></a>
-                            <a class="Botao_eventos"href="./Calendario_meuseventos.html">Meus Eventos</a>
-                                <!-- Title for confirmation section. -->
-                        </div>
-                    </div>
-                    <div class="caixa_calendario">
-                        <div class="fundo_calendario">
-                            <color class="roxo_calendario">
-                                <h1 class="calendarioTitle">
-                                    <!-- Title for confirmation section. -->
-                                    CALENDÁRIO
-                                </h1>
-                            </color>
-                            
-                        </div>
-                        <!-- Block indicating user access level. -->
-                        
-
-                    </div>
-                        
-                    
-                </div>
-                
-            </div>
-            <div class="rodape">
-                <div class="fundo_rodape"></div>
-                <!-- Block for showing developer information. -->
-                <div class="barraInferior">
-                    <h1 class="desenvolvidoPor">
-                        <!-- Title indicating the developer. -->
-                        DEVELOPED BY
-                    </h1>
-                    <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+    <!-- Main section for user management features. -->
+    <div class="corpo">
+        <!-- cabeçalho -->
+        <div class="cabecalho">
+            <div class="barraSuperior"></div>
+            <!-- Block indicating the user status. -->
+            <div class="info_cabecalho">
+                <a href=".\Home.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                <div class="icones_cabecalho">
+                    <a href=".\Home.html"><img class="voltar" src="./assets/voltar.png"></a>
+                    <img class="perfil" src="./assets/perfil.png" alt="alt text" />
+                    <a href="./Usuarios_acessos.html"><img class="config" src="./assets/config.png" alt="alt text" /></a>
+                    <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/sair.png" alt="alt text" /></a>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="colunas">
+
+            <!--Caixa Inicial-->
+            <div class="caixa_botoes" id="cx_inicial">
+                <div class="prox_eventos">
+                    <h1 class="prox_eventos_titulo">
+                        Próximos eventos:
+                    </h1>
+                    <div id="addEventos" class="ajustesFlex">
+
+                    </div>
+
+                </div>
+                <div class="meus_eventos_botao" id="btn_myEvents">
+                    <color class="roxo"></color>
+                    <button class="Botao_eventos" >Meus Eventos</button>
+                </div>
+            </div>
+
+            <!--Caixa Meus eventos-->
+            <div class="caixa_botoes hidden" id="cx_myEvents">
+                <div class="prox_eventos">
+                    <color class="roxo_meuseventos">
+                        <h1 class="eventos_Titulo">
+                            MEUS EVENTOS
+                        </h1>
+                    </color>    
+                    <div id="myEventosEdit"  class="ajustesFlex">
+
+                    </div>
+                    <div class="botao_novo" id="btn_newEvent">
+                        <color class="verde"></color>
+                        <button class="novo_evento" >NOVO EVENTO</button>
+                    </div>
+                </div>
+                <div class="meus_eventos_botao" id="btn_cx_inicial">
+                    <color class="roxo"></color>
+                    <button class="Botao_eventos" >Voltar</button>
+                </div>
+            </div>
+
+            <!--Caixa Novo Evento-->
+            <div class="caixa_botoes hidden" id="cx_newEvent">
+                <div class="prox_eventos">
+                    <color class="roxo_meuseventos">
+                        <h1 class="eventos_Titulo">
+                            NOVO EVENTO
+                        </h1>
+                    </color>
+                    <div class="itens_evento">
+                        <div class="Training">
+                            <h1 class="Nome">
+                                Training:
+                            </h1>
+                            <input type="text" class='caixa_roxa' id="txt_training"/>
+                        </div>
+                        <div class="Responsavel">
+                            <h1 class="Nome">
+                                Responsavel:
+                            </h1>
+                            <input type="text" class='caixa_roxa' id="txt_responsavel"/>
+                        </div>
+                        <div class="Tipo">
+                            <h1 class="Nome">
+                                Tipo:
+                            </h1>
+                            <select class="caixa_roxa" id="TipoEvent" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Mandatorio">Mandatório</option>
+                                <option value="Desenvolvimento">Desenvolvimento</option>
+                                <option value="Evento">Evento</option>
+                                <option value="Encontro">Encontro Área</option>
+                                <option value="Visita">Visita Internacional</option>
+                                <option value="Campanha">Campanha</option>
+                                <option value="Ativacao">Ativação</option>
+                            </select>
+                        </div>
+                        <div class="Area">
+                            <h1 class="Nome">
+                                Área:
+                            </h1>
+                            <select class="caixa_roxa" id="Areas" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="PDLI">PDLI</option>
+                                <option value="SF Training">SF Training</option>
+                                <option value="HSE">HSE</option>
+                                <option value="DEEI">DE&I</option>
+                                <option value="Talent">Talent Management</option>
+                                <option value="Cultura">Cultura</option>
+                            </select>
+                        </div>
+                        <div class="Formato">
+                            <h1 class="Nome">
+                                Formato:
+                            </h1>
+                            <select class="caixa_roxa" id="local_formato" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Online">Online</option>
+                                <option value="Hibrido">Hibrido</option>
+                            </select>
+                        </div>
+                        <div class="Localidade">
+                            <h1 class="Nome">
+                                Audiencia:
+                            </h1>
+                            <select class="caixa_roxa" id="Audiencia" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Todos">Todos</option>
+                                <option value="Sede">Sede</option>
+                                <option value="Suzano">Suzano</option>
+                                <option value="Campinas">Campinas</option>
+                                <option value="ForcaVendas">Força de Vendas</option>
+                            </select>
+                        </div>
+                        <div class="Data" id="dt_event">
+                            <h1 class="Nome">
+                                Data:
+                            </h1>
+                            <input type="date" id="dt_evento" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                        </div>
+                    </div>
+                    <div class="botao_novo" onclick="addEvent()">
+                        <color class="verde"></color>
+                        <h1 class="novo_evento">
+                            CADASTRAR
+                        </h1>
+                    </div>
+                </div>
+                <div class="meus_eventos_botao" id="btn_cx_myEvents"> 
+                    <color class="roxo"></color>
+                    <button class="Botao_eventos" >Voltar</button>
+                </div>
+            </div>
+
+            <!--Caixa de Edição de eventos-->
+            <div class="caixa_botoes hidden" id="cx_editEvent">
+                <div class="prox_eventos">
+                    <color class="roxo_meuseventos">
+                        <h1 class="eventos_Titulo">
+                            EDITAR EVENTO
+                        </h1>
+                    </color>
+                    <div class="itens_evento">
+                        <div class="Training">
+                            <h1 class="Nome">
+                                Training:
+                            </h1>
+                            <input type="text" class='caixa_roxa' id="txt_training_edit"/>
+                        </div>
+                        <div class="Responsavel">
+                            <h1 class="Nome">
+                                Responsavel:
+                            </h1>
+                            <input type="text" class='caixa_roxa' id="txt_responsavel_edit"/>
+                        </div>
+                        <div class="Tipo">
+                            <h1 class="Nome">
+                                Tipo:
+                            </h1>
+                            <select class="caixa_roxa" id="TipoEvent_edit" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Mandatorio">Mandatório</option>
+                                <option value="Desenvolvimento">Desenvolvimento</option>
+                                <option value="Evento">Evento</option>
+                                <option value="Encontro">Encontro Área</option>
+                                <option value="Visita">Visita Internacional</option>
+                                <option value="Campanha">Campanha</option>
+                                <option value="Ativacao">Ativação</option>
+                            </select>
+                        </div>
+                        <div class="Area">
+                            <h1 class="Nome">
+                                Área:
+                            </h1>
+                            <select class="caixa_roxa" id="Areas_edit" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="PDLI">PDLI</option>
+                                <option value="SF Training">SF Training</option>
+                                <option value="HSE">HSE</option>
+                                <option value="DEEI">DE&I</option>
+                                <option value="Talent">Talent Management</option>
+                                <option value="Cultura">Cultura</option>
+                            </select>
+                        </div>
+                        <div class="Formato">
+                            <h1 class="Nome">
+                                Formato:
+                            </h1>
+                            <select class="caixa_roxa" id="local_formato_edit" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Online">Online</option>
+                                <option value="Hibrido">Hibrido</option>
+                            </select>
+                        </div>
+                        <div class="Localidade">
+                            <h1 class="Nome">
+                                Audiencia:
+                            </h1>
+                            <select class="caixa_roxa" id="Audiencia_edit" name="setor" required>
+                                <option value="" disabled selected>Selecione um setor</option>
+                                <option value="Todos">Todos</option>
+                                <option value="Sede">Sede</option>
+                                <option value="Suzano">Suzano</option>
+                                <option value="Campinas">Campinas</option>
+                                <option value="ForcaVendas">Força de Vendas</option>
+                            </select>
+                        </div>
+                        <div class="Data" id="dt_event">
+                            <h1 class="Nome">
+                                Data:
+                            </h1>
+                            <input type="date" id="dt_evento_edit" class="caixa_roxa" name="data" placeholder="Selecione uma data" required>
+                        </div>
+                    </div>
+                    <div class="botao_novo" id="btn_salvar_edit">
+                        <color class="verde"></color>
+                        <h1 class="novo_evento">
+                            SALVAR
+                        </h1>
+                    </div>
+                </div>
+                <div class="meus_eventos_botao" id="btn_cx_myEventsEdit"> 
+                    <color class="roxo_Cancelamento"></color>
+                    <button class="Botao_eventos">Cancelar</button>
+                </div>
+            </div>
+            <div class="caixa_calendario">
+                <div class="fundo_calendario">
+                    <color class="roxo_calendario">
+                        <h1 class="calendarioTitle">
+                            CALENDÁRIO
+                        </h1>
+                    </color>
+                    <div id='calendar' class="calendario_test"></div>
+                </div>
+            </div>
+                
+            
+        </div>
+        
+    </div>
+    <div class="rodape">
+        <!-- Block for showing developer information. -->
+        <div class="barraInferior">
+            <h1 class="desenvolvidoPor">
+                <!-- Title indicating the developer. -->
+                DEVELOPED BY
+            </h1>
+            <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+        </div>
+    </div>
 
 
 </body>

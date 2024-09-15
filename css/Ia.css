@@ -1,33 +1,27 @@
-* {
-    margin: 0;
-  }
-  
-  html, body {
-    height: 100%;
+  * {
     margin: 0;
   }
 
- .home_geral {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #ebebeb;
-    overflow: hidden;
-    min-height: 100vh;
+  html, body {
+    height: 100vh;
+    margin: 0;
   }
- .conteudo-home {
+
+  .home_page {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px 0;
+    background-color: #ebebeb;
+    overflow: hidden;
+    min-height: 100vh;
     margin: 1rem 0;
   }
   .corpo {
     display: flex;
     flex-direction: column;
-    gap: 25px 0;
-    width: 96.98%;
+    gap: 2vb 0;
+    width: 98vw;
   }
   .cabecalho {
     position: relative;
@@ -36,14 +30,14 @@
   }
   .barraSuperior {
     position: relative;
-    min-height: 86px;
+    height: 9vh;
     background-color: white;
     border-radius: 15px;
     outline: 2px solid #7b0ae6;
   }
   .info_cabecalho {
     position: absolute;
-    padding: 19px;
+    padding: 1.5vb;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,8 +46,8 @@
     height: 100%;
   }
   .logoSanofi {
-    margin-top: 17px;
-    width: 206px;
+    margin-top: 1.1vb;
+    width: 20vb;
     min-width: 0;
   }
   .icones_cabecalho {
@@ -62,168 +56,61 @@
     gap: 0 12px;
     min-width: 0;
   }
+  .voltar {
+    width: 7.4vb;
+    min-width: 0;
+  }
   .perfil {
-    width: 72px;
+    width: 7vb;
     min-width: 0;
   }
   .config {
-    width: 60px;
+    width: 6vb;
     min-width: 0;
   }
   .sair {
-    width: 51px;
+    margin-top: 0.5vh;
+    width: 5vb;
     min-width: 0;
   }
   .colunas {
     display: flex;
     align-self: flex-start;
-    gap: 0 17px;
-    width: 100%;
-  }
-  .caixa_botoes {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 2px;
-    width: 30%;
-    min-width: 0;
-  }
-  .caixa_Malas, .caixa_Perifericos {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 2px;
-    width: 30%;
-    min-width: 0;
-    gap: 15px;
+    justify-content: space-between;
+    gap: 3.2vb;
+    width: 98vw;
   }
   .prox_eventos {
-    min-height: 275px;
-    position: absolute;
-    padding-bottom: 1rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    width: 29.5vw;
+    height: 29vb;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
   }
   .prox_eventos_titulo {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    right: 0;
-    font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
+    font: 700 3.6vb/1.19 "Inria Sans", Helvetica, Arial, serif;
     color: #010101;
     text-align: center;
   }
-  .fundo_caixa {
-    position: relative;
-    min-height: 280px;
-    background-color: white;
-    border-radius: 15px;
-    outline: 0.5px solid #010101;
-  }
-  .fundo_caixa_malas {
-    position: relative;
-    min-height: 60px;
-    background-color: white;
-    border-radius: 15px;
-    outline: 0.5px solid #010101;
-  }
-  .imagens_peri, .imagens_malas {
+  .Doc {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    align-items: space-between;
     justify-content: center;
-  }
-  .itens_perifericos, .itens_malas {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    min-height: 30px;
-    background-color: white;
-    border-radius: 15px;
-    outline: 0.5px solid #010101;
-    width: 230px;
-    height: 230px;
-  }
-  .cadastrar_caixa {
-    position: absolute;
-    padding-bottom: 1rem;
-    padding-left:  1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .catalogo_malas, .catalogo_perifericos {
-    position: absolute;
-    padding-bottom: 1rem;
-    padding-left:  1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .cadastrar_titulo, .perifericos_titulo {
-    display: flex;
-    justify-content: center;
-    font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
-    color: #010101;
-    text-align: center;
-  }
-  .malas_titulo {
-    display: flex;
-    justify-content: center;
-    font: 700 36px/1.19 "Inria Sans", Helvetica, Arial, serif;
-    color: #010101;
-    text-align: center;
-  }
-  .Usuario, .Email, .Setor {
-    display: flex;
-    align-items: center;
-    justify-items: right;
-    gap: 0 16px;
-    margin: 47px 0 0;
-    width: 100%;
-  }
-  .Nome {
-    display: flex;
-    padding-left: 10px;
-    justify-content: flex-start;
-    min-width: 155;
-    width: 200px;
-    font: 400 28px/1.21 "Inria Sans", Helvetica, Arial, serif;
-    color: #010101;
-    text-align: right;
-  }
-  #caixa_roxa {
-    display: flex;
-    justify-content: end;
-    padding-left: 15px;
-    margin-top: 20px;
-    width: 400px;
-    min-width: 0;
-    height: 73px;
-    min-height: 73px;
-    background-color: rgba(123, 10, 230, 0);
-    border-radius: 15px;
-    outline: 3px solid #7b0ae6;
-    outline-offset: -3px;
-    font-size: large;
   }
   #caixa_roxa_contorno {
     display: flex;
     justify-content: start;
-    padding-left: 15px;
-    margin-top: 20px;
+    padding-left: 0.6vw;
+    margin-top: 3vh;
     width: 490px;
-    min-width: 0;
-    height: 73px;
-    min-height: 73px;
+    width: 26vw;
+    height: 7.3vh;
     background-color: rgba(123, 10, 230, 0);
     border-radius: 15px;
     outline: 3px solid #7b0ae6;
@@ -244,84 +131,47 @@
     justify-content: flex-start; /* Para alinhar o ícone e o nome na horizontal */
     position: relative;
   }
-  
   label {
     cursor: pointer;
     position: relative; /* Certifique-se de que o label está no lugar correto */
   }
-  
   label img {
-    width: 40px; /* Tamanho do ícone */
-    height: 40px;
+    width: 4vb; /* Tamanho do ícone */
+    height: 4vb;
     object-fit: cover;
     position: absolute; /* Mantém o ícone fixo no layout */
-    right: -455px; /* Posição fixa, ajuste conforme necessário */
-    top: 0px;
+    right: -24vw;
     transform: translateY(-50%);
   }
-  
   #file-name {
-    margin-left: 10px; /* Espaço suficiente para garantir que o nome não sobreponha o ícone */
-    font-size: 14px;
+    font-size: 1.4vb;
     color: #333; /* Cor do texto */
     white-space: nowrap; /* Evita que o nome quebre em várias linhas */
     overflow: hidden;
     text-overflow: ellipsis; /* Adiciona "..." se o nome do arquivo for muito longo */
   }
-  #bola_roxa {
-    width: 1.5em;
-    height: 1.5em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 2px solid #7b0ae6;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-  }
-  #bola_roxa:checked {
-    background-color: rgb(94, 255, 0);
-  }
-  .Training, .Responsavel, .Tipo, .Area, .Formato, .Localidade, .Data {
-    display: flex;
-    align-items: center;
-    justify-items: right;
-    gap: 0 36px;
-    margin-top: 21px;
-    margin-bottom: 21px;
-    width: 100%;
-  }
   .botoes {
-    position: absolute;
-    bottom: 20px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    margin: 24px 0 0;
-    width: 65.49%;
+    margin: 2.4vh 5vw 0;
+    width: 18vw;
   }
   .verde {
     position: relative;
     display: block;
-    min-height: 73px;
+    min-height: 7.3vh;
     background-color: #02a125;
     border-radius: 15px;
   }
-  .roxo {
-    position: relative;
-    display: block;
-    min-height: 73px;
-    background-color: #7b0ae6;
-    border-radius: 15px;
-  }
-  .confirmTitle, .dashTitle {
+  .confirmTitle {
     position: absolute;
     display: flex;
     justify-content: center;
     align-self: center;
-    font: 400 38px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    font: 400 3.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
     color: white;
     text-align: right;
     text-decoration: none;
@@ -331,12 +181,13 @@
     display: flex;
     flex-direction: column;
     margin: 0 0 2px;
-    width: 70%;
+    width: 70vw;
     min-width: 0;
   }
   .fundo_calendario {
     position: relative;
-    min-height: 795px;
+    height: 79.9vb;
+    width: 67.8vw;
     background-color: white;
     border-radius: 15px;
     outline: 0.5px solid #010101;
@@ -345,7 +196,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    min-height: 120px;
+    height: 12vh;
     background-color: #7b0ae6;
     border-radius: 15px;
   }
@@ -354,41 +205,32 @@
     display: flex;
     justify-content: center;
     align-self: center;
-    font: 800 56px/1.21 "Inria Sans", Helvetica, Arial, serif;
+    font: 800 5.6vb/1.21 "Inria Sans", Helvetica, Arial, serif;
     color: white;
     text-align: right;
     text-decoration: none;
   }
   .rodape {
     position: fixed;
+    display: flex;
+    justify-content: end;
     bottom: 0;
-    width: 100%;
-  }
-  .fundo_rodape {
-    position: relative;
-    min-height: 55px;
+    width: 100vw;
+    height: 5.6vh;
     background-color: #010101;
   }
   .barraInferior {
-    position: absolute;
-    top: -1px;
-    right: 14px;
+    position: flex;
     display: flex;
     align-items: center;
-    gap: 0 12px;
-    width: 328px;
-    height: 56px;
+    gap: 0 0.7vb;
+    padding-right: 1vw;
   }
   .desenvolvidoPor {
     min-width: 0;
-    font: 300 35px/1.2 "Inria Sans", Helvetica, Arial, serif;
+    font: 300 3.6vb/1.2 "Inria Sans", Helvetica, Arial, serif;
     color: #ebebeb;
   }
   .logoiHumanTech {
-    width: 91px;
-    min-width: 0;
-  }
-  .conf_malas {
-    width: 85%;
-    margin-left: 39px;
+    width: 10vb;
   }

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+  }
+  
+  html, body {
+    height: 100vh;
+    margin: 0;
+  }
+
+  .home_page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebeb;
+    overflow: hidden;
+    min-height: 100vh;
+    margin: 1rem 0;
+  }
+ .conteudo-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px 0;
+    margin: 1rem 0;
+  }
+  .corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 2vb 0;
+    width: 98vw;
+  }
+  .cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .barraSuperior {
+    position: relative;
+    min-height: 9vh;
+    background-color: white;
+    border-radius: 15px;
+    outline: 2px solid #7b0ae6;
+  }
+  .info_cabecalho {
+    position: absolute;
+    padding: 1.5vb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .logoSanofi {
+    margin-top: 1.1vb;
+    width: 20vb;
+    min-width: 0;
+  }
+  .icones_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    min-width: 0;
+  }
+  .perfil {
+    width: 7vb;
+    min-width: 0;
+  }
+  .config {
+    width: 6vb;
+    min-width: 0;
+  }
+  .sair {
+    width: 5vb;
+    min-width: 0;
+  }
+  .colunas {
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    width: 98vw;
+  }
+  .caixa_botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 98vw;
+  }
+  .cadastrar_caixa {
+    position: relative;
+    padding-top: 2vh;
+    width: 98vw;
+    height: 8vh;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .cadastrar_titulo, .perifericos_titulo {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    font: 700 3.6vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  .titulos_soli {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .linhas_soli {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .nome_titulo, .mail_titulo, .setor_titulo, .itens_titulo {
+    font: 700 3.6vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  .nome_linhas, .mail_linhas, .setor_linhas, .itens_linhas {
+    margin-top: 1vh;
+    font: 300 2.5vb/1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    text-align: center;
+  }
+  #bola_roxa1, #bola_roxa2, #bola_roxa3, #bola_roxa4, #bola_roxa5, #bola_roxa6, #bola_roxa7, #bola_roxa8, #bola_roxa9, #bola_roxa10, #bola_roxa11, #bola_roxa12 {
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 3vw;
+    width: 2.5vb;
+    height: 2.5vb;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #7b0ae6;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  #bola_roxa1:checked, #bola_roxa2:checked, #bola_roxa3:checked, #bola_roxa4:checked, #bola_roxa5:checked, #bola_roxa6:checked, #bola_roxa7:checked, #bola_roxa8:checked, #bola_roxa9:checked, #bola_roxa10:checked, #bola_roxa11:checked, #bola_roxa11:checked {
+    background-color: rgb(94, 255, 0);
+}
+  .botoes {
+    position:static;
+    display: flex;
+    justify-content: end;
+    padding-right: 1vb;
+    margin-top: -5.4vh;
+    width: 98vw;
+    gap: 1.5vb;
+  }
+  .verde {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5vh;
+    width: 11vw;
+    background-color: #02a125;
+    border-radius: 15px;
+    font: 400 1.5vw/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .roxo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5vh;
+    width: 21vb;
+    width: 11vw;
+    background-color: #A10702;
+    border-radius: 15px;
+    font: 400 1.5vw/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-decoration: none;
+  }
+  .a {
+    text-decoration: none;
+  }
+  .caixa_SOLI {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2px;
+    width: 98vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 15px;
+    outline: 0.5px solid #010101;
+  }
+  .solicita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .botoes_s {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 18vw;
+    margin-top: 2vh;
+  }
+  .branco {
+    position: relative;
+    display: block;
+    height: 7.3vh;
+    width: 23vw;
+    background-color: white;
+    border-radius: 15px;
+    border: 3px solid #7b0ae6;
+  }
+  .soliTitle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 3.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: #7b0ae6;
+    text-align: right;
+    text-decoration: none;
+  }
+  .confirmTitle, .dashTitle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font: 400 3.8vb/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+  }
+  .rodape {
+    position: fixed;
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    width: 100vw;
+    height: 5.6vh;
+    background-color: #010101;
+  }
+  .barraInferior {
+    position: flex;
+    display: flex;
+    align-items: center;
+    gap: 0 0.7vb;
+    padding-right: 1vw;
+  }
+  .desenvolvidoPor {
+    min-width: 0;
+    font: 300 3.6vb/1.2 "Inria Sans", Helvetica, Arial, serif;
+    color: #ebebeb;
+  }
+  .logoiHumanTech {
+    width: 10vb;
+  }

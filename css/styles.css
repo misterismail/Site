@@ -1,0 +1,248 @@
+:root {
+    --color-purple: #7A00E6;
+    --color-white: #fff;
+    --color-black: #111111;
+    --color-red: crimson;
+    --color-button: #00CED1;
+    --color-button-hover: #00A5A5;
+    --color-loading: #f3f3f3;
+    --color-loading-spin: #007bff;
+    --sombreado-roxo:rgba(122, 0, 230, 0.6);
+    --sombreado-branco: rgba(255, 255, 255, 0.6);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
+  }
+  
+  .left-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .left-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--sombreado-roxo);
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-white);
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    width: 250px;
+    height: auto;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--color-purple);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-white);
+  }
+  
+  .login-form label {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-group-error {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    background-color: var(--color-purple);
+    border-radius: 50%;
+  }
+  
+  .input-group-error .icon {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    background-color: var(--color-purple);
+    border-radius: 50%;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 47px;
+    border: solid;
+    border-radius: 20px;
+    font-size: 16px;
+    border-color: var(--color-white);
+  }
+  
+  .input-group-error input {
+    width: 100%;
+    padding: 10px 10px 10px 47px;
+    border: solid;
+    border-radius: 20px;
+    font-size: 16px;
+    border-color: var(--color-red);
+  }
+  
+  button {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-button);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--color-button-hover);
+  }
+  
+  .forgot-password {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--color-white);
+    transition: color 0.5s;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    color: var(--color-button);
+    text-decoration: underline;
+  }
+  
+  #loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-purple);
+    z-index: 1;
+  }
+  
+  .spinner {
+    border: 8px solid var(--color-loading);
+    border-top: 8px solid var(--color-loading-spin);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  #loading-screen.hidden {
+    display: none;
+  }
+  
+  #loading-screen p {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--color-white);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 941px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-section{
+        flex: none;
+        width: 100%;
+    }
+    
+    .left-section img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .right-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--color-white);
+    }
+    
+    .right-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: var(--sombreado-branco);
+        border-radius: 25px;
+    }
+  
+    .logo img {
+        max-width: 60%;
+        margin-top: -5px;
+    }
+  }

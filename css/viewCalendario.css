@@ -1,0 +1,98 @@
+#cx_inicial.hidden {
+    display: none;
+}
+#cx_myEvents.hidden {
+    display: none;
+}
+#cx_newEvent.hidden {
+    display: none;
+}
+#cx_editEvent.hidden {
+    display: none;
+}
+
+#btn_myEvents:active {
+    color: #6208b6;
+}
+#btn_cx_inicial:active {
+    color: #6208b6;
+}
+#btn_newEvent:active {
+    color: #036d1a;
+}
+#btn_cx_myEvents:active {
+    color: #6208b6;
+}
+
+.erroIten {
+    outline: 3px solid red;
+}
+
+.cardColumnEdit {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 82%;
+    min-height: 53px;
+    outline: 3px solid #7b0ae6;
+    border-radius: 15px;
+    outline-offset: -3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+}
+
+.cardColumnEdit h1 {
+    font: 500 25px / 1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cardColumnEdit h2 {
+    font: 100 20px / 1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    margin-bottom: 5px;
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 82%;
+    min-height: 53px;
+    outline: 3px solid #7b0ae6;
+    border-radius: 15px;
+    outline-offset: -3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+}
+
+.cardColumn h1 {
+    font: 500 25px / 1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cardColumn h2 {
+    font: 100 20px / 1.19 "Inria Sans", Helvetica, Arial, serif;
+    color: #010101;
+    margin-bottom: 5px;
+}
+
+.ajustesFlex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.columnBTN {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
