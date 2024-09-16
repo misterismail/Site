@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         height: '700px',
+        locale: 'pt-br',
         fixedWeekCount: false,
         events: [],
 
