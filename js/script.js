@@ -17,7 +17,7 @@ async function fetchUsers(usuario, senha) {
                 loginInfo.push(login)
                 localStorage.setItem("login", JSON.stringify(loginInfo))
 
-                window.location.href = 'home.html'
+                window.location.href = 'Inicio.html'
                 valida = 1
             }
         })
