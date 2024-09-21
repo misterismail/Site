@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000'
+const apiUrl = 'https://sanofiapi.onrender.com'
 
 async function fetchFuncio() {
     try {
