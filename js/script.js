@@ -3,7 +3,7 @@ const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
 async function fetchUsers(usuario, senha) {
     valida = 0
     try {
-        const response = await fetch(apiUrl + "/api/v2/users/${usuario}");
+        const response = await fetch(apiUrl + `/api/v2/users/${usuario}`);
         const users = await response.json();
 
         users.forEach(user => {
