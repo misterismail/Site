@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
 
 async function fetchUsers(usuario, senha) {
     valida = 0
