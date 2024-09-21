@@ -4,7 +4,7 @@ async function fetchUsers(usuario, senha) {
     valida = 0
     try {
         const response = await fetch(apiUrl + `/api/v2/users/${usuario}`);
-        const users = await response.json();
+        const users = [await response.json()];
 
         users.forEach(user => {
             if (usuario === user.USUARIO && senha === user.SENHA) {
