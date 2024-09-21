@@ -4,14 +4,14 @@ async function fetchUsers(usuario, senha) {
     valida = 0
     try {
         const response = await fetch(apiUrl + `/api/v2/users/${usuario}`);
-        const users = [await response.json()];
+        const users = await response.json();
 
-        users.forEach(user => {
-            if (usuario === user.USUARIO && senha === user.SENHA) {
+        
+            if (usuario === users.USUARIO && senha === users.SENHA) {
                 let login = {
-                    id: user.ID_USER,
-                    acess: user.ACESSO,
-                    newAcess: user.PRI_ACCESS
+                    id: users.ID_USER,
+                    acess: users.ACESSO,
+                    newAcess: users.PRI_ACCESS
                 }
                 const loginInfo = []
                 loginInfo.push(login)
@@ -20,7 +20,7 @@ async function fetchUsers(usuario, senha) {
                 window.location.href = 'Inicio.html'
                 valida = 1
             }
-        })
+        
     } catch (error) {
         alert("User ou senha invalidos!")
     } finally {
