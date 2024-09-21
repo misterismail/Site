@@ -1,148 +1,112 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
     <title>Solicitações</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="./css/Solicitacao.css" />
-
-
-
-
+    <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/Solicitacao.css" />
+    <script src="./assets/js/exit.js" defer></script>
+    <script src="./assets/js/loadingnav.js" defer></script>
 </head>
-
 <body class="home_page">
-        <!-- Main section for user management features. -->
             <div class="corpo">
-                <!-- cabeçalho -->
                 <div class="cabecalho">
                     <div class="barraSuperior"></div>
-                    <!-- Block indicating the user status. -->
                     <div class="info_cabecalho">
-                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png" alt="alt text" /></a>
                         <div class="icones_cabecalho">
-                            <a href=".\Inicio.html"><img class="voltar" src="./assets/voltar.png"></a>
-                            <a href="./Usuarios_acessos.html"><img class="perfil" src="./assets/perfil.png" alt="alt text" /></a>
-                            <img class="config" src="./assets/config.png" alt="alt text" />
-                            <img class="sair" src="./assets/sair.png" alt="alt text" />
+                            <a href=".\Inicio.html"><img class="voltar" src="./assets/image/voltar.png"></a>                            
+                            <a href="./Usuarios_acessos.html"><img class="perfil" src="./assets/image/perfil.png" alt="alt text" /></a>
+                            <div id="navBar"></div>
+                            <!-- <img class="config" src="./assets/image/config.png" alt="alt text" /> -->
+                            <img class="sair" src="./assets/image/sair.png" alt="alt text" />
                         </div>
                     </div>
                 </div>
                 <div class="colunas">
-                    <div class="caixa_botoes">
-                        <!-- Block indicating user access level. -->
+                    <div class="caixa_botoes">                        
                         <div class="cadastrar_caixa">
-                            <h1 class="cadastrar_titulo">
-                                <!-- Title for updating a user. -->
+                            <h1 class="cadastrar_titulo">                                
                                     SOLICITAÇÕES
                             </h1>
                             <div class="botoes">
-                                <color class="verde">APROVAR</color>
-                                
-                                <a href="" class="a"><color class="roxo">REPROVAR</color></a>
-                                    <!-- Title for confirmation section. -->
+                                <color class="verde">APROVAR</color>                                
+                                <a href="" class="a"><color class="roxo">REPROVAR</color></a>                                    
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
-                <div class="caixa_SOLI">
-                    <!-- Block indicating user access level. -->
+                <div class="caixa_SOLI">                   
                     <div class="titulos_soli">
-                        <h1 class="nome_titulo">
-                            <!-- Title for updating a user. -->
+                        <h1 class="nome_titulo">                           
                                 Nome
-                        </h1>
-                        
+                        </h1>                        
                         <h1 class="mail_titulo">
-                            <!-- Title for updating a user. -->
                                 E-mail
                         </h1>
                         <h1 class="setor_titulo">
-                            <!-- Title for updating a user. -->
                                 Setor
                         </h1>
                         <h1 class="itens_titulo">
-                            <!-- Title for updating a user. -->
                                 Itens
                         </h1>
                     </div>
                     <div class="linhas_soli">
                         <input type="checkbox" id='bola_roxa1'/>
                         <h1 class="nome_linhas">
-                            <!-- Title for updating a user. -->
                                 Cléber Machado
                         </h1>
                         <h1 class="mail_linhas">
-                            <!-- Title for updating a user. -->
                                 operação.teste@sanofi.com.br
                         </h1>
                         <h1 class="setor_linhas">
-                            <!-- Title for updating a user. -->
                                 Operação
                         </h1>
                         <h1 class="itens_linhas">
-                            <!-- Title for updating a user. -->
                              Mochila Resistente a Água
                         </h1>
                     </div>
                     <div class="linhas_soli">
                         <input type="checkbox" id='bola_roxa2'/>
                         <h1 class="nome_linhas">
-                            <!-- Title for updating a user. -->
                                 Manoel de Abreu
                         </h1>
                         <h1 class="mail_linhas">
-                            <!-- Title for updating a user. -->
                                 ti.teste@sanofi.com.br
                         </h1>
                         <h1 class="setor_linhas">
-                            <!-- Title for updating a user. -->
                                 TI
                         </h1>
                         <h1 class="itens_linhas">
-                            <!-- Title for updating a user. -->
                                 Mochila C/ Roda + Carregador Apple + blusa de frio
                         </h1>
                     </div>
                     <div class="linhas_soli">
                         <input type="checkbox" id='bola_roxa3'/>
                         <h1 class="nome_linhas">
-                            <!-- Title for updating a user. -->
                                 Caique Oliveira
                         </h1>
                         <h1 class="mail_linhas">
-                            <!-- Title for updating a user. -->
                                 marketing.teste@sanofi.com.br
                         </h1>
                         <h1 class="setor_linhas">
-                            <!-- Title for updating a user. -->
                                 Marketing
                         </h1>
                         <h1 class="itens_linhas">
-                            <!-- Title for updating a user. -->
                                 Iphone 15 Pro MAX + Macbook
                         </h1>
                     </div>
-
                 </div>
             </div>
-            <div class="rodape">
-                <!-- Block for showing developer information. -->
+            <div class="rodape">               
                 <div class="barraInferior">
-                    <h1 class="desenvolvidoPor">
-                        <!-- Title indicating the developer. -->
+                    <h1 class="desenvolvidoPor">                      
                         DEVELOPED BY
                     </h1>
-                    <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+                    <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
                 </div>
             </div>
 

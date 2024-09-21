@@ -110,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             document.getElementById('cx_newEvent').classList.add('hidden')
             document.getElementById("cx_myEvents").classList.remove("hidden")
+            alert("Evento adicionado!")
+        } else {
+            alert("Corrgia os apontamentos visuais!")
         }
     }
     //Deletar eventos

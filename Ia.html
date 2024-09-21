@@ -1,50 +1,35 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
     <title>Conferência Ágil</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="./css/Ia.css" />
-    <script src="./js/Ia.js" defer></script>
-    <script src="./js/exit.js" defer></script>
-
-
-
-
-
+    <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/Ia.css" />
+    <script src="./assets/js/Ia.js" defer></script>
+    <script src="./assets/js/exit.js" defer></script>
+    <script src="./assets/js/loadingnav.js" defer></script>
 </head>
-
 <body class="home_page">
-
-        <!-- Main section for user management features. -->
             <div class="corpo">
-                <!-- cabeçalho -->
                 <div class="cabecalho">
                     <div class="barraSuperior"></div>
-                    <!-- Block indicating the user status. -->
                     <div class="info_cabecalho">
-                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/logoSanofi.png" alt="alt text" /></a>
+                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png" alt="alt text" /></a>
                         <div class="icones_cabecalho">
-                            <a href=".\Inicio.html"><img class="voltar" src="./assets/voltar.png"></a>
-                            <img class="perfil" src="./assets/perfil.png" alt="alt text" />
-                            <a href="./Usuarios_acessos.html"><img class="config" src="./assets/config.png" alt="alt text" /></a>
-                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/sair.png" alt="alt text" /></a>
+                            <a href=".\Inicio.html"><img class="voltar" src="./assets/image/voltar.png"></a>
+                            <img class="perfil" src="./assets/image/perfil.png" alt="alt text" />
+                            <div id="navBar"></div>
+                            <!-- <a href="./Usuarios_acessos.html"><img class="config" src="./assets/image/config.png" alt="alt text" /></a> -->
+                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/image/sair.png" alt="alt text" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="colunas">
-                    <!-- Block indicating user access level. -->
                     <div class="prox_eventos">
                         <h1 class="prox_eventos_titulo">
-                            <!-- Title for updating a user. -->
                             Inserir documento
                         </h1>
                         <div class="Doc">
@@ -52,18 +37,15 @@
                                 <div class="file-input">
                                     <input type="file" id="caixa_roxa" name="doc" placeholder="Selecione um documento" required>
                                     <label for="caixa_roxa">
-                                    <img src="./assets/insert.png" alt="Upload" />
+                                    <img src="./assets/image/insert.png" alt="Upload" />
                                     </label>
-                                    <span id="file-name">Nenhum arquivo selecionado</span> <!-- Aqui o nome do arquivo será exibido -->
-                                </div>
-                                
-                                </div>
-                                    
-                            </div>
+                                    <span id="file-name">Nenhum arquivo selecionado</span> 
+                                </div>                                
+                            </div>                                    
+                        </div>
                             <div class="botoes">
                                 <color class="verde"></color>
                                 <h1 class="confirmTitle">
-                                    <!-- Title for confirmation section. -->
                                     CONFIRMAR
                                 </h1>
                             </div>
@@ -72,28 +54,19 @@
                         <div class="fundo_calendario">
                             <color class="roxo_calendario">
                                 <h1 class="calendarioTitle">
-                                    <!-- Title for confirmation section. -->
                                     Análise de documento
                                 </h1>
-                            </color>
-                            
-                        </div>
-                        <!-- Block indicating user access level. -->
-                        
-
+                            </color>                            
+                        </div>  
                     </div>
-                        
-                    
                 </div>
             </div>
         <div class="rodape">
-            <!-- Block for showing developer information. -->
             <div class="barraInferior">
                 <h1 class="desenvolvidoPor">
-                    <!-- Title indicating the developer. -->
                     DEVELOPED BY
                 </h1>
-                <img class="logoiHumanTech" src="./assets/logoiHumanTech.png" alt="alt text" />
+                <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
             </div>
         </div>
 

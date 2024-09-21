@@ -58,6 +58,9 @@ document.getElementById("btn_EnvioSolicitacao").addEventListener('click', functi
         document.querySelectorAll("div.itens_malas").forEach((input) => { input.checked = false })
         document.querySelectorAll("div.itens_perifericos").forEach((input) => { input.checked = false })
         location.reload()
+        alert("Forms enviado!")
         //função para carregar dentr do banco de dados...
+    } else {
+        alert("corriga os apontamentos visuais!")
     }
 })

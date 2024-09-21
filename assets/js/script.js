@@ -1,25 +1,25 @@
 const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
+//Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchUsers(usuario, senha) {
     valida = 0
     try {
         const response = await fetch(apiUrl + `/api/v2/users/${usuario}`);
-        const users = await response.json();
+        const users = await response.json()
 
-        
-            if (usuario === users.USUARIO && senha === users.SENHA) {
-                let login = {
-                    id: users.ID_USER,
-                    acess: users.ACESSO,
-                    newAcess: users.PRI_ACCESS
-                }
-                const loginInfo = []
-                loginInfo.push(login)
-                localStorage.setItem("login", JSON.stringify(loginInfo))
-
-                window.location.href = 'Inicio.html'
-                valida = 1
+        if (usuario === users.USUARIO && senha === users.SENHA) {
+            let login = {
+                id: users.ID_USER,
+                acess: users.ACESSO,
+                newAcess: users.PRI_ACCESS
             }
+            const loginInfo = []
+            loginInfo.push(login)
+            localStorage.setItem("login", JSON.stringify(loginInfo))
+
+            window.location.href = 'Inicio.html'
+            valida = 1
+        }
         
     } catch (error) {
         alert("User ou senha invalidos!")
@@ -31,18 +31,18 @@ async function fetchUsers(usuario, senha) {
 function erroLogin() {
     document.querySelectorAll(".input-group")
         .forEach((input) => {
-            input.classList.remove("input-group")
-            input.classList.add("input-group-error")
+            input.classList.remove("input-group");
+            input.classList.add("input-group-error");
         })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.login-form');
+    const form = document.querySelector('.login-form')
 
     form.addEventListener('submit', async function (event) {
         event.preventDefault()
 
-        document.getElementById('loading-screen').classList.remove('hidden')
+        document.getElementById('loading-screen').classList.remove('hidden');
 
         const user = document.getElementById('user').value
         const senha = document.getElementById('senha').value
@@ -51,6 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let invalid = await fetchUsers(user, senha)
         if (invalid == 0) {
             document.getElementById('loading-screen').classList.add('hidden')
-        }
-    })
-})
+        };
+    });
+});
