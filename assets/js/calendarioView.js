@@ -290,8 +290,8 @@ function myEventos(evento){
             <h2>${evento.local} - ${date[2]}/${date[1]}</h2>
         </div> 
         <div class="columnBTN">
-            <button onclick="editEvent(${evento.id})"><img class="editar" src="./assets/editar.png"/></button>
-            <button onclick="deleteEvent(${evento.id})"><img class="delete" src="./assets/delete.png"/></button>
+            <button onclick="editEvent(${evento.id})"><img class="editar" src="./assets/image/editar.png"/></button>
+            <button onclick="deleteEvent(${evento.id})"><img class="delete" src="./assets/image/delete.png"/></button>
         </div>
     </div>
     `
