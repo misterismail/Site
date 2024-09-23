@@ -1,74 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Conferência Ágil</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/Ia.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/IA_sup.css">
     <script src="./assets/js/Ia.js" defer></script>
     <script src="./assets/js/exit.js" defer></script>
     <script src="./assets/js/loadingnav.js" defer></script>
 </head>
+
 <body class="home_page">
-            <div class="corpo">
-                <div class="cabecalho">
-                    <div class="barraSuperior"></div>
-                    <div class="info_cabecalho">
-                        <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png" alt="alt text" /></a>
-                        <div class="icones_cabecalho">
-                            <a href=".\Inicio.html"><img class="voltar" src="./assets/image/voltar.png"></a>
-                            <img class="perfil" src="./assets/image/perfil.png" alt="alt text" />
-                            <div id="navBar"></div>
-                            <!-- <a href="./Usuarios_acessos.html"><img class="config" src="./assets/image/config.png" alt="alt text" /></a> -->
-                            <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/image/sair.png" alt="alt text" /></a>
-                        </div>
-                    </div>
+    <div class="corpo">
+        <div class="cabecalho">
+            <div class="barraSuperior"></div>
+            <div class="info_cabecalho">
+                <a href=".\Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png"
+                        alt="alt text" /></a>
+                <div class="icones_cabecalho">
+                    <a href=".\Inicio.html"><img class="voltar" src="./assets/image/voltar.png"></a>
+                    <img class="perfil" src="./assets/image/perfil.png" alt="alt text" />
+                    <div id="navBar"></div>
+                    <!-- <a href="./Usuarios_acessos.html"><img class="config" src="./assets/image/config.png" alt="alt text" /></a> -->
+                    <a id="exitWorkSpace" href="/index.html"><img class="sair" src="./assets/image/sair.png"
+                            alt="alt text" /></a>
                 </div>
-                <div class="colunas">
-                    <div class="prox_eventos">
-                        <h1 class="prox_eventos_titulo">
-                            Inserir documento
-                        </h1>
-                        <div class="Doc">
-                            <div id="caixa_roxa_contorno">
-                                <div class="file-input">
-                                    <input type="file" id="caixa_roxa" name="doc" placeholder="Selecione um documento" required>
-                                    <label for="caixa_roxa">
-                                    <img src="./assets/image/insert.png" alt="Upload" />
-                                    </label>
-                                    <span id="file-name">Nenhum arquivo selecionado</span> 
-                                </div>                                
-                            </div>                                    
-                        </div>
-                            <div class="botoes">
-                                <color class="verde"></color>
-                                <h1 class="confirmTitle">
-                                    CONFIRMAR
-                                </h1>
-                            </div>
-                    </div>
-                    <div class="caixa_calendario">
-                        <div class="fundo_calendario">
-                            <color class="roxo_calendario">
-                                <h1 class="calendarioTitle">
-                                    Análise de documento
-                                </h1>
-                            </color>                            
-                        </div>  
-                    </div>
-                </div>
-            </div>
-        <div class="rodape">
-            <div class="barraInferior">
-                <h1 class="desenvolvidoPor">
-                    DEVELOPED BY
-                </h1>
-                <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
             </div>
         </div>
+        <div class="colunas">
+            <div class="prox_eventos">
+                <h1 class="prox_eventos_titulo">
+                    Inserir documento
+                </h1>
+                <div class="Doc">
+                    <div id="caixa_roxa_contorno">
+                        <div class="file-input">
+                            <input type="file" id="caixa_roxa" name="doc" accept=".pdf"
+                                placeholder="Selecione um documento" multiple required>
+                            <label for="caixa_roxa">
+                                <img src="./assets/image/insert.png" alt="Upload" />
+                            </label>
+                            <span id="file-name">Nenhum arquivo selecionado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="botoes" id="submitArquivosIa">
+                    <color class="verde"></color>
+                    <h1 class="confirmTitle">
+                        CONFIRMAR
+                    </h1>
+                </div>
+            </div>
+            <div class="caixa_calendario">
+
+                <div class="fundo_calendario">
+                    <color class="roxo_calendario">
+                        <h1 class="calendarioTitle">
+                            Análise de documento
+                        </h1>
+                    </color>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Idade</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>João Silva</td>
+                                <td>joao.silva@email.com</td>
+                                <td>28</td>
+                                <td><span class="status-active">Ativo</span></td>
+                                <td>
+                                    <button class="action-btn">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Maria Oliveira</td>
+                                <td>maria.oliveira@email.com</td>
+                                <td>35</td>
+                                <td><span class="status-inactive">Inativo</span></td>
+                                <td>
+                                    <button class="action-btn">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Souza</td>
+                                <td>carlos.souza@email.com</td>
+                                <td>22</td>
+                                <td><span class="status-active">Ativo</span></td>
+                                <td>
+                                    <button class="action-btn">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="barraInferior">
+            <h1 class="desenvolvidoPor">
+                DEVELOPED BY
+            </h1>
+            <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
+        </div>
+    </div>
 
 </body>
 

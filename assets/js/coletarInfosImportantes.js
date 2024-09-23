@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchFuncio(userId) {
@@ -15,7 +15,7 @@ async function fetchFuncio(userId) {
         const Info = []
         Info.push(funcio)
         localStorage.setItem("funcioInfos", JSON.stringify(Info))
-        
+
     } catch (error) {
         alert("Erro no banco!")
     }
@@ -55,7 +55,7 @@ async function fetchSolicit(userId) {
         }
         localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
 
-        
+
     } catch (error) {
         alert("Erro no banco!")
     }
@@ -82,11 +82,11 @@ async function fetchEventFunc(userId) {
                 eventId: eventFunc.EVENT_ID_EVENT,
                 funcId: eventFunc.FUNC_ID_FUNC,
                 aprov: eventFunc.ORGANIZADOR
-            }        
+            }
             Info.push(funcioEvent)
         }
         localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
-        
+
     } catch (error) {
         alert("Erro no banco!")
     }
@@ -105,31 +105,31 @@ async function fetchEvent(userId) {
                     eventId: colectInfo.ID_EVENT,
                     data: colectInfo.DT_EVENT,
                     nome: colectInfo.NOME,
-                    tipo:colectInfo.TIPO,
-                    formato:colectInfo.FORMATO,
-                    GBU:colectInfo.GBU,
-                    statusEvent:colectInfo.STATUS,
-                    obs:colectInfo.OBSERVACAO,
-                    area:colectInfo.AREA
+                    tipo: colectInfo.TIPO,
+                    formato: colectInfo.FORMATO,
+                    GBU: colectInfo.GBU,
+                    statusEvent: colectInfo.STATUS,
+                    obs: colectInfo.OBSERVACAO,
+                    area: colectInfo.AREA
                 }
                 Info.push(funcioEvent)
             })
         } else {
             let funcioEvent = {
                 eventId: event.ID_EVENT,
-                    data: event.DT_EVENT,
-                    nome: event.NOME,
-                    tipo:event.TIPO,
-                    formato:event.FORMATO,
-                    GBU:event.GBU,
-                    statusEvent:event.STATUS,
-                    obs:event.OBSERVACAO,
-                    area:event.AREA
-            }        
+                data: event.DT_EVENT,
+                nome: event.NOME,
+                tipo: event.TIPO,
+                formato: event.FORMATO,
+                GBU: event.GBU,
+                statusEvent: event.STATUS,
+                obs: event.OBSERVACAO,
+                area: event.AREA
+            }
             Info.push(funcioEvent)
         }
         localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
-        
+
     } catch (error) {
         alert("Erro no banco!")
     }
@@ -159,7 +159,7 @@ async function fetchEvent(userId) {
 //     }
 // }
 
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     const loginInfo = JSON.parse(localStorage.getItem("login")) || []
     let user = loginInfo[0]
     await fetchFuncio(user.id)
