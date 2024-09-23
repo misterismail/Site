@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000' //Pegar link novo
+const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchFuncio(userId) {
@@ -148,14 +148,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     let user = loginInfo[0]
     await fetchFuncio(user.id)
 
-    const funcionarioInfo = JSON.parse(localStorage.getItem("solicitacoesInfos")) || []
+    const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
     let idFuncionario = funcionarioInfo[0]
 
-    await fetchSolicit(idFuncionario.id)
     await fetchEventFunc(idFuncionario.id)
 
     const eventFuncio = JSON.parse(localStorage.getItem("EventFuncio")) || []
     eventFuncio.forEach(async evento => {
         await fetchEvent(evento.id)
     })
+
+    await fetchSolicit(idFuncionario.id)
 })
