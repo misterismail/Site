@@ -1,4 +1,4 @@
-const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
+const apiUrl = 'http://localhost:3000' //Pegar link novo
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchFuncio(userId) {
@@ -21,9 +21,9 @@ async function fetchFuncio(userId) {
     }
 }
 
-async function fetchSolicit(userId) {
+async function fetchSolicit(funcId) {
     try {
-        const response = await fetch(apiUrl + `/api/v2/solic/${userId}`);
+        const response = await fetch(apiUrl + `/api/v2/solic/${funcId}`);
         const funcionarios = await response.json();
 
         const Info = []
@@ -61,9 +61,9 @@ async function fetchSolicit(userId) {
     }
 }
 
-async function fetchEventFunc(userId) {
+async function fetchEventFunc(funcId) {
     try {
-        const response = await fetch(apiUrl + `/api/v2/eventfunc/${userId}`);
+        const response = await fetch(apiUrl + `/api/v2/eventfunc/${funcId}`);
         const eventFunc = await response.json();
 
         const Info = []
@@ -85,50 +85,34 @@ async function fetchEventFunc(userId) {
             }
             Info.push(funcioEvent)
         }
-        localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
+        localStorage.setItem("EventFuncio", JSON.stringify(Info))
 
     } catch (error) {
         alert("Erro no banco!")
     }
 }
 
-async function fetchEvent(userId) {
+async function fetchEvent(eventId) {
     try {
-        const response = await fetch(apiUrl + `/api/v2/event/${userId}`);
+        const response = await fetch(apiUrl + `/api/v2/event/${eventId}`);
         const event = await response.json();
 
-        const Info = []
+        const Info = JSON.parse(localStorage.getItem("eventos")) || []
 
-        if (Array.isArray(event)) {
-            event.forEach(colectInfo => {
-                let funcioEvent = {
-                    eventId: colectInfo.ID_EVENT,
-                    data: colectInfo.DT_EVENT,
-                    nome: colectInfo.NOME,
-                    tipo: colectInfo.TIPO,
-                    formato: colectInfo.FORMATO,
-                    GBU: colectInfo.GBU,
-                    statusEvent: colectInfo.STATUS,
-                    obs: colectInfo.OBSERVACAO,
-                    area: colectInfo.AREA
-                }
-                Info.push(funcioEvent)
-            })
-        } else {
-            let funcioEvent = {
-                eventId: event.ID_EVENT,
-                data: event.DT_EVENT,
-                nome: event.NOME,
-                tipo: event.TIPO,
-                formato: event.FORMATO,
-                GBU: event.GBU,
-                statusEvent: event.STATUS,
-                obs: event.OBSERVACAO,
-                area: event.AREA
-            }
-            Info.push(funcioEvent)
+        let funcioEvent = {
+            eventId: event.ID_EVENT,
+            data: event.DT_EVENT,
+            nome: event.NOME,
+            tipo: event.TIPO,
+            formato: event.FORMATO,
+            GBU: event.GBU,
+            statusEvent: event.STATUS,
+            obs: event.OBSERVACAO,
+            area: event.AREA
         }
-        localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
+        Info.push(funcioEvent)
+
+        localStorage.setItem("eventos", JSON.stringify(Info))
 
     } catch (error) {
         alert("Erro no banco!")
@@ -163,4 +147,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     const loginInfo = JSON.parse(localStorage.getItem("login")) || []
     let user = loginInfo[0]
     await fetchFuncio(user.id)
+
+    const funcionarioInfo = JSON.parse(localStorage.getItem("solicitacoesInfos")) || []
+    let idFuncionario = funcionarioInfo[0]
+
+    await fetchSolicit(idFuncionario.id)
+    await fetchEventFunc(idFuncionario.id)
+
+    const eventFuncio = JSON.parse(localStorage.getItem("EventFuncio")) || []
+    eventFuncio.forEach(async evento => {
+        await fetchEvent(evento.id)
+    })
 })
