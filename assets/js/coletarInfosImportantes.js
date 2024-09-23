@@ -112,7 +112,7 @@ async function fetchEvent(eventId) {
         }
         Info.push(funcioEvent)
 
-        localStorage.setItem("eventos", JSON.stringify(Info))
+        localStorage.setItem("eventCalendar", JSON.stringify(Info))
 
     } catch (error) {
         alert("Erro no banco!")
