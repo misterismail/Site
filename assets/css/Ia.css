@@ -234,3 +234,7 @@
   .logoiHumanTech {
     width: 10vb;
   }
+
+  #submitArquivosIa:active {
+    color: #01881e;
+  }
