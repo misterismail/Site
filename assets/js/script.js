@@ -66,8 +66,6 @@ async function fetchEventFunc(funcId) {
         const response = await fetch(apiUrl + `/api/v2/eventfunc/${funcId}`);
         const eventFunc = await response.json();
 
-        console.log(eventFunc)
-
         const Info = []
 
         if (Array.isArray(eventFunc)) {
@@ -178,29 +176,6 @@ async function fetchUsers(usuario, senha) {
             loginInfo.push(login)
             localStorage.setItem("login", JSON.stringify(loginInfo))
 
-            document.querySelector('#loading-screen p').innerHTML = "Carregando Informações..."
-
-            await fetchFuncio(login.id)
-
-            const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
-            let idFuncionario = funcionarioInfo[0]
-
-            await fetchEventFunc(idFuncionario.id)
-
-            let eventosFuncionarioList = []
-            const eventFuncio = JSON.parse(localStorage.getItem("EventFuncio")) || []
-            console.log("Aqui!")
-            console.log(eventFuncio)
-            eventFuncio.forEach(evento => {
-                eventosFuncionarioList.push(evento.eventId)
-            })
-            console.log("Aqui!")
-            console.log(eventosFuncionarioList)
-            await fetchEvent(eventosFuncionarioList)
-
-            await fetchSolicit(idFuncionario.id)
-
-            window.location.href = 'Inicio.html'
             valida = 1
         }
 
@@ -234,6 +209,27 @@ document.addEventListener('DOMContentLoaded', function () {
         let invalid = await fetchUsers(user, senha)
         if (invalid == 0) {
             document.getElementById('loading-screen').classList.add('hidden')
-        };
+        } else {
+            document.querySelector('#loading-screen p').innerHTML = "Carregando Informações..."
+
+            const login = JSON.parse(localStorage.getItem("login")) || []
+            await fetchFuncio(login[0].id)
+
+            const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
+            let idFuncionario = funcionarioInfo[0]
+
+            await fetchEventFunc(idFuncionario.id)
+
+            let eventosFuncionarioList = []
+            const eventFuncio = JSON.parse(localStorage.getItem("EventFuncio")) || []
+            eventFuncio.forEach(evento => {
+                eventosFuncionarioList.push(evento.eventId)
+            })
+            await fetchEvent(eventosFuncionarioList)
+
+            await fetchSolicit(idFuncionario.id)
+
+            window.location.href = 'Inicio.html'
+        }
     });
 });

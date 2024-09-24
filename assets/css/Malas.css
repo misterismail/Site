@@ -314,3 +314,11 @@
   .erroIten {
     outline: 3px solid red;
   }
+
+  .box_quantidade {
+    width: 17%;
+    height: 15%;
+    border: 2px solid #7b0ae6;
+    justify-content: space-around;
+    font: 400 2vb/1.2 "Inria Sans", Helvetica, Arial, serif;
+  }
