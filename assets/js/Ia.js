@@ -18,6 +18,7 @@ document.getElementById('submitArquivosIa').addEventListener('click', function (
   for (let i = 0; i < files.length; i++) {
     formData.append('files', files[i]);  // Adiciona cada arquivo ao FormData
   }
+  document.getElementById('resultTable').innerHTML = ""
 
   fetch('http://127.0.0.1:5000/upload', {
     method: 'POST',
@@ -28,11 +29,7 @@ document.getElementById('submitArquivosIa').addEventListener('click', function (
       if (data.error) {
         document.getElementById('result').innerText = `Erro: ${data.error}`;
       } else {
-        document.getElementById('resultTable').innerHTML = ""
-        // Exibe os resultados para cada arquivo
-        //let resultText = '';
         data.resultados.forEach(res => {
-          //resultText += `Arquivo ${index + 1}: ${res.conteudo}\n\n`;
           let resposta = res.conteudo
 
           const linhaCard = document.createElement("tr")
@@ -41,11 +38,11 @@ document.getElementById('submitArquivosIa').addEventListener('click', function (
           document.getElementById('resultTable').appendChild(linhaCard)
         });
         document.getElementById('loading-screen').classList.add('hidden')
-        //document.getElementById('result').innerText = resultText;
       }
+      document.getElementById('loading-screen').classList.add('hidden')
     })
     .catch(error => {
-      document.getElementById('result').innerText = `Erro ao enviar: ${error}`;
+      document.getElementById('loading-screen').classList.add('hidden')
     });
 })
 
