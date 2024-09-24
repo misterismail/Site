@@ -1,4 +1,4 @@
-const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
+const apiUrl = 'http://localhost:3000' //Pegar link novo
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchFuncio(userId) {
@@ -66,6 +66,8 @@ async function fetchEventFunc(funcId) {
         const response = await fetch(apiUrl + `/api/v2/eventfunc/${funcId}`);
         const eventFunc = await response.json();
 
+        console.log(eventFunc)
+
         const Info = []
 
         if (Array.isArray(eventFunc)) {
@@ -94,23 +96,40 @@ async function fetchEventFunc(funcId) {
 
 async function fetchEvent(eventId) {
     try {
-        const response = await fetch(apiUrl + `/api/v2/event/${eventId}`);
+        const response = await fetch(apiUrl + `/api/v3/events?ids=${eventId}`);
         const event = await response.json();
 
         const Info = JSON.parse(localStorage.getItem("eventos")) || []
 
-        let funcioEvent = {
-            eventId: event.ID_EVENT,
-            data: event.DT_EVENT,
-            nome: event.NOME,
-            tipo: event.TIPO,
-            formato: event.FORMATO,
-            GBU: event.GBU,
-            statusEvent: event.STATUS,
-            obs: event.OBSERVACAO,
-            area: event.AREA
+        if (Array.isArray(event)) {
+            event.forEach(colectInfo => {
+                let funcioEvent = {
+                    eventId: colectInfo.ID_EVENT,
+                    data: colectInfo.DT_EVENT,
+                    nome: colectInfo.NOME,
+                    tipo: colectInfo.TIPO,
+                    formato: colectInfo.FORMATO,
+                    GBU: colectInfo.GBU,
+                    statusEvent: colectInfo.STATUS,
+                    obs: colectInfo.OBSERVACAO,
+                    area: colectInfo.AREA
+                }
+            Info.push(funcioEvent)
+            })
+        } else {
+            let funcioEvent = {
+                eventId: event.ID_EVENT,
+                data: event.DT_EVENT,
+                nome: event.NOME,
+                tipo: event.TIPO,
+                formato: event.FORMATO,
+                GBU: event.GBU,
+                statusEvent: event.STATUS,
+                obs: event.OBSERVACAO,
+                area: event.AREA
+            }
+            Info.push(funcioEvent)
         }
-        Info.push(funcioEvent)
 
         localStorage.setItem("eventCalendar", JSON.stringify(Info))
 
@@ -168,10 +187,16 @@ async function fetchUsers(usuario, senha) {
 
             await fetchEventFunc(idFuncionario.id)
 
+            let eventosFuncionarioList = []
             const eventFuncio = JSON.parse(localStorage.getItem("EventFuncio")) || []
-            eventFuncio.forEach(async evento => {
-                await fetchEvent(evento.id)
+            console.log("Aqui!")
+            console.log(eventFuncio)
+            eventFuncio.forEach(evento => {
+                eventosFuncionarioList.push(evento.eventId)
             })
+            console.log("Aqui!")
+            console.log(eventosFuncionarioList)
+            await fetchEvent(eventosFuncionarioList)
 
             await fetchSolicit(idFuncionario.id)
 
