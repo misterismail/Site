@@ -12,12 +12,14 @@ document.getElementById('submitArquivosIa').addEventListener('click', function (
     return;
   }
 
+  document.getElementById('loading-screen').classList.remove('hidden');
+
   const formData = new FormData();
   for (let i = 0; i < files.length; i++) {
     formData.append('files', files[i]);  // Adiciona cada arquivo ao FormData
   }
 
-  fetch('https://api-ia-site-challeng-sanofi.onrender.com/upload', {
+  fetch('http://127.0.0.1:5000/upload', {
     method: 'POST',
     body: formData
   })
@@ -26,15 +28,24 @@ document.getElementById('submitArquivosIa').addEventListener('click', function (
       if (data.error) {
         document.getElementById('result').innerText = `Erro: ${data.error}`;
       } else {
+        document.getElementById('resultTable').innerHTML = ""
         // Exibe os resultados para cada arquivo
-        let resultText = '';
-        data.resultados.forEach((res, index) => {
-          resultText += `Arquivo ${index + 1}: ${res.conteudo}\n\n`;
+        //let resultText = '';
+        data.resultados.forEach(res => {
+          //resultText += `Arquivo ${index + 1}: ${res.conteudo}\n\n`;
+          let resposta = res.conteudo
+
+          const linhaCard = document.createElement("tr")
+          let linha = `<th>${res.filename}</th><th>${resposta.sentimento}</th><th>${resposta.Bert}</th><th>${resposta.Naive}</th><th>${resposta.validadeDoc}</th><th>${resposta.resultadoFinal}</th>`
+          linhaCard.innerHTML = linha
+          document.getElementById('resultTable').appendChild(linhaCard)
         });
-        document.getElementById('result').innerText = resultText;
+        document.getElementById('loading-screen').classList.add('hidden')
+        //document.getElementById('result').innerText = resultText;
       }
     })
     .catch(error => {
       document.getElementById('result').innerText = `Erro ao enviar: ${error}`;
     });
 })
+

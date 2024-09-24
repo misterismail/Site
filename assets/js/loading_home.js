@@ -10,7 +10,7 @@ const acessos = [
     },
     {
     acesso: '3',
-    txt:`<a href="https://app.powerbi.com/reportEmbed?reportId=3d920963-bde0-4787-8c91-1cff9a263c26&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551"><img class="dash_agil" src=".\\assets\\\image\\dash_agil.png" alt="alt text" width="93%"/></a>`
+    txt:`<a href="https://app.powerbi.com/reportEmbed?reportId=786ffeba-b899-493a-873c-78b6142d033c&autoAuth=true&ctid=11dbbfe2-89b8-4549-be10-cec364e59551"><img class="dash_agil" src=".\\assets\\\image\\dash_agil.png" alt="alt text" width="93%"/></a>`
     }
 ]
 

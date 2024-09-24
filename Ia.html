@@ -18,6 +18,12 @@
 </head>
 
 <body class="home_page">
+
+    <div id="loading-screen" class="hidden">
+        <div  class="spinner"></div>
+        <p>Aguarde enquanto a IA faz sua parte...</p>
+    </div>
+
     <div class="corpo">
         <div class="cabecalho">
             <div class="barraSuperior"></div>
@@ -51,11 +57,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="botoes" id="submitArquivosIa">
+                <div class="botoes">
                     <color class="verde"></color>
-                    <h1 class="confirmTitle">
+                    <button class="confirmTitle" id="submitArquivosIa">
                         CONFIRMAR
-                    </h1>
+                    </button>
                 </div>
             </div>
             <div class="caixa_calendario">
@@ -70,44 +76,16 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Idade</th>
-                                <th>Status</th>
-                                <th>Ações</th>
+                                <th class="inicio">Nome do arquivo</th>
+                                <th class="inicio">Sentimento</th>
+                                <th class="inicio">BERT</th>
+                                <th class="inicio">Naive Bayes</th>
+                                <th class="inicio">Validade</th>
+                                <th class="inicio">FINAL</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>João Silva</td>
-                                <td>joao.silva@email.com</td>
-                                <td>28</td>
-                                <td><span class="status-active">Ativo</span></td>
-                                <td>
-                                    <button class="action-btn">Editar</button>
-                                    <button class="action-btn delete">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Maria Oliveira</td>
-                                <td>maria.oliveira@email.com</td>
-                                <td>35</td>
-                                <td><span class="status-inactive">Inativo</span></td>
-                                <td>
-                                    <button class="action-btn">Editar</button>
-                                    <button class="action-btn delete">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Carlos Souza</td>
-                                <td>carlos.souza@email.com</td>
-                                <td>22</td>
-                                <td><span class="status-active">Ativo</span></td>
-                                <td>
-                                    <button class="action-btn">Editar</button>
-                                    <button class="action-btn delete">Excluir</button>
-                                </td>
-                            </tr>
+                        <tbody id="resultTable">
+                            
                         </tbody>
                     </table>
                 </div>

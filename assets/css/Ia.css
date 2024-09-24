@@ -1,3 +1,16 @@
+:root {
+  --color-purple: #7A00E6;
+  --color-white: #fff;
+  --color-black: #111111;
+  --color-red: crimson;
+  --color-button: #00CED1;
+  --color-button-hover: #00A5A5;
+  --color-loading: #f3f3f3;
+  --color-loading-spin: #007bff;
+  --sombreado-roxo:rgba(122, 0, 230, 0.6);
+  --sombreado-branco: rgba(255, 255, 255, 0.6);
+}
+  
   * {
     margin: 0;
   }
@@ -235,6 +248,83 @@
     width: 10vb;
   }
 
-  #submitArquivosIa:active {
-    color: #01881e;
+  #loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-purple);
+    z-index: 10;
+  }
+
+  .spinner {
+    border: 8px solid var(--color-loading);
+    border-top: 8px solid var(--color-loading-spin);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  #loading-screen.hidden {
+    display: none;
+  }
+  
+  #loading-screen p {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--color-white);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 941px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-section{
+        flex: none;
+        width: 100%;
+    }
+    
+    .left-section img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .right-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--color-white);
+    }
+    
+    .right-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: var(--sombreado-branco);
+        border-radius: 25px;
+    }
+  
+    .logo img {
+        max-width: 60%;
+        margin-top: -5px;
+    }
   }
