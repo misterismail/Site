@@ -17,7 +17,62 @@ async function armazenarSolicitacao( motivo, idFuncio, endereco) {
       .catch(error => console.error('Erro:', error))
 }
 
+async function armazenarSolicitacaoEquipamento( idSolic, idEquipamento, quantidade) {
+    fetch(apiUrl + '/api/v2/solicitacao/equipamentos', {
+        method: 'POST',
+        body: JSON.stringify({
+            solicID: idSolic,
+            equipID: idEquipamento,
+            Qdte: quantidade
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Erro:', error))
+    
+}
 
+async function fetchSolicit(funcId) {
+    try {
+        const response = await fetch(apiUrl + `/api/v2/solic/${funcId}`);
+        const funcionarios = await response.json();
+
+        const Info = []
+
+        if (Array.isArray(funcionarios)) {
+            funcionarios.forEach(colectInfo => {
+                let solic = {
+                    id: colectInfo.ID_SOLIC,
+                    data: colectInfo.DT_SOLIC,
+                    quant: colectInfo.QUANTIDADE,
+                    motivo: colectInfo.MOTIVO,
+                    prev: colectInfo.PREV_ENTREGA,
+                    status: colectInfo.STATUS,
+                    solicitante: colectInfo.FUNCIONARIOS_ID_FUNC
+                }
+                Info.push(solic)
+            })
+        } else {
+            let solic = {
+                id: funcionarios.ID_SOLIC,
+                data: funcionarios.DT_SOLIC,
+                quant: funcionarios.QUANTIDADE,
+                motivo: funcionarios.MOTIVO,
+                prev: funcionarios.PREV_ENTREGA,
+                status: funcionarios.STATUS,
+                solicitante: funcionarios.FUNCIONARIOS_ID_FUNC
+            }
+            Info.push(solic)
+        }
+        localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
+
+
+    } catch (error) {
+        //alert("Erro no banco!")
+    }
+}
 
 document.getElementById("btn_EnvioSolicitacao").addEventListener('click', async function () {
 
@@ -36,8 +91,8 @@ document.getElementById("btn_EnvioSolicitacao").addEventListener('click', async 
         document.querySelector("#mala06").value,
         document.querySelector("#peri01").value,
         document.querySelector("#peri02").value,
-        document.querySelector("#peri03").value,
         document.querySelector("#peri04").value,
+        document.querySelector("#peri03").value,     
         document.querySelector("#peri05").value,
         document.querySelector("#peri06").value
     ]
@@ -91,8 +146,29 @@ MAX 15 - MIN 0`)
             const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
             let idFuncionario = funcionarioInfo[0]
 
-            await armazenarSolicitacao(motivo, idFuncionario.id ,endereco)
-        
+            const solic = JSON.parse(localStorage.getItem("solicitacoesInfos"))
+
+            let confirm = await armazenarSolicitacao(motivo, idFuncionario.id ,endereco)
+            
+            await fetchSolicit(idFuncionario.id)
+            if (confirm == "error") {
+                alert("Erro ao enviar o forms...")
+                return
+            }
+            const solicPos = JSON.parse(localStorage.getItem("solicitacoesInfos"))
+
+            if (solic.length != solicPos.length){
+                equipamentos.forEach( async (equip, index) => {
+                    if (equip != 0){
+                        console.log(solic[0].id)
+                        await armazenarSolicitacaoEquipamento(solic[0].id, index+1, equip)
+                    }
+                })
+            } else {
+                alert("Erro ao enviar o forms...")
+                return
+            }
+            
             //document.querySelector("#QTDE_forms").value = ""
             document.querySelector("#Endereco_forms").value = ""
             document.querySelector("#Motivo_forms").value = ""

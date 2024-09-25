@@ -30,7 +30,7 @@ async function fetchSolicit(funcId) {
 
         if (Array.isArray(funcionarios)) {
             funcionarios.forEach(colectInfo => {
-                let funcio = {
+                let solic = {
                     id: colectInfo.ID_SOLIC,
                     data: colectInfo.DT_SOLIC,
                     quant: colectInfo.QUANTIDADE,
@@ -39,10 +39,10 @@ async function fetchSolicit(funcId) {
                     status: colectInfo.STATUS,
                     solicitante: colectInfo.FUNCIONARIOS_ID_FUNC
                 }
-                Info.push(funcio)
+                Info.push(solic)
             })
         } else {
-            let funcio = {
+            let solic = {
                 id: funcionarios.ID_SOLIC,
                 data: funcionarios.DT_SOLIC,
                 quant: funcionarios.QUANTIDADE,
@@ -51,7 +51,7 @@ async function fetchSolicit(funcId) {
                 status: funcionarios.STATUS,
                 solicitante: funcionarios.FUNCIONARIOS_ID_FUNC
             }
-            Info.push(funcio)
+            Info.push(solic)
         }
         localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
 
@@ -97,13 +97,11 @@ async function fetchEvent(eventId) {
         const response = await fetch(apiUrl + `/api/v3/events?ids=${eventId}`);
         const event = await response.json();
 
-        console.log(event)
-
         if (event.message == 'No events found') {
             return
         }
 
-        const Info = JSON.parse(localStorage.getItem("eventos")) || []
+        const Info = []
 
         if (Array.isArray(event)) {
             event.forEach(colectInfo => {
@@ -136,6 +134,86 @@ async function fetchEvent(eventId) {
         }
 
         localStorage.setItem("eventCalendar", JSON.stringify(Info))
+
+    } catch (error) {
+        //alert("Erro no banco!")
+    }
+}
+
+async function fetchAprovacao(liderId) {
+    try {
+        const response = await fetch(apiUrl + `/api/v2/liderados/${liderId}`);
+        const liderados = await response.json();
+
+        if (liderados.message == 'User not found') {
+            return
+        }
+
+        const Info = []
+
+        if (Array.isArray(liderados)) {
+            liderados.forEach(colectInfo => {
+                let funcioEvent = {
+                    liderado: colectInfo.ID_EVENT,
+                    nome: colectInfo.NOME_COMPLETO,
+                    email: colectInfo.EMAIL
+                }
+            Info.push(funcioEvent)
+            })
+        } else {
+            let funcioEvent = {
+                liderado: liderados.ID_EVENT,
+                nome: liderados.NOME_COMPLETO,
+                email: liderados.EMAIL
+            }
+            Info.push(funcioEvent)
+        }
+
+        localStorage.setItem("liderados", JSON.stringify(Info))
+
+    } catch (error) {
+        //alert("Erro no banco!")
+    }
+}
+
+async function fetchAprovarSolicitacoes(eventId) {
+    try {
+        const response = await fetch(apiUrl + `/api/v2/solicAprov?ids=${eventId}`);
+        const aprovarsolic = await response.json();
+
+        if (aprovarsolic.message == 'No aprovacoes found') {
+            return
+        }
+
+        const Info = []
+
+        if (Array.isArray(funcionarios)) {
+            funcionarios.forEach(colectInfo => {
+                let solic = {
+                    id: colectInfo.ID_SOLIC,
+                    data: colectInfo.DT_SOLIC,
+                    quant: colectInfo.QUANTIDADE,
+                    motivo: colectInfo.MOTIVO,
+                    prev: colectInfo.PREV_ENTREGA,
+                    status: colectInfo.STATUS,
+                    solicitante: colectInfo.FUNCIONARIOS_ID_FUNC
+                }
+                Info.push(solic)
+            })
+        } else {
+            let solic = {
+                id: aprovarsolic.ID_SOLIC,
+                data: aprovarsolic.DT_SOLIC,
+                quant: aprovarsolic.QUANTIDADE,
+                motivo: aprovarsolic.MOTIVO,
+                prev: aprovarsolic.PREV_ENTREGA,
+                status: aprovarsolic.STATUS,
+                solicitante: aprovarsolic.FUNCIONARIOS_ID_FUNC
+            }
+            Info.push(solic)
+        }
+
+        localStorage.setItem("aprovacoes", JSON.stringify(Info))
 
     } catch (error) {
         //alert("Erro no banco!")
@@ -234,6 +312,16 @@ document.addEventListener('DOMContentLoaded', function () {
             await fetchEvent(eventosFuncionarioList)
 
             await fetchSolicit(idFuncionario.id)
+
+            await fetchAprovacao(idFuncionario.id)
+
+            let lideradosUser = []
+            const liderados = JSON.parse(localStorage.getItem("liderados")) || []
+            liderados.forEach(evento => {
+                lideradosUser.push(evento.liderado)
+            })
+            await fetchAprovarSolicitacoes(lideradosUser)
+
 
             window.location.href = 'Inicio.html'
         }
