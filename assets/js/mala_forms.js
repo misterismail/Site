@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000"
+const apiUrl = "https://sanofiapi.onrender.com"
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function armazenarSolicitacao(motivo, idFuncio, endereco) {
