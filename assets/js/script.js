@@ -97,6 +97,12 @@ async function fetchEvent(eventId) {
         const response = await fetch(apiUrl + `/api/v3/events?ids=${eventId}`);
         const event = await response.json();
 
+        console.log(event)
+
+        if (event.message == 'No events found') {
+            return
+        }
+
         const Info = JSON.parse(localStorage.getItem("eventos")) || []
 
         if (Array.isArray(event)) {

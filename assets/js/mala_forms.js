@@ -86,24 +86,24 @@ MAX 15 - MIN 0`)
     }
 
     if (!erro) {
-        //document.querySelector("#QTDE_forms").value = ""
-        document.querySelector("#Endereco_forms").value = ""
-        document.querySelector("#Motivo_forms").value = ""
-        document.querySelectorAll("label.itens_malas").forEach((input) => { input.value = 0 })
-        document.querySelectorAll("label.itens_perifericos").forEach((input) => { input.value = 0 })
-        location.reload()
 
-        const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
-        let idFuncionario = funcionarioInfo[0]
+        try{
+            const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
+            let idFuncionario = funcionarioInfo[0]
 
-        await armazenarSolicitacao(motivo, idFuncionario.id ,endereco)
+            await armazenarSolicitacao(motivo, idFuncionario.id ,endereco)
         
-        alert("Forms enviado!")
-        //função para carregar dentr do banco de dados...
+            //document.querySelector("#QTDE_forms").value = ""
+            document.querySelector("#Endereco_forms").value = ""
+            document.querySelector("#Motivo_forms").value = ""
+            document.querySelectorAll("label.itens_malas").forEach((input) => { input.value = 0 })
+            document.querySelectorAll("label.itens_perifericos").forEach((input) => { input.value = 0 })
 
-
-
-
+            location.reload()
+            alert("Forms enviado!")
+        } catch {
+            alert("Erro ao enviar o forms...")
+        }
 
     } else {
         alert("corriga os apontamentos visuais!")

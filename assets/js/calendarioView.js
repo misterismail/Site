@@ -275,6 +275,7 @@ eventos.forEach(evento => {
 
 function proxEventos(evento) {
     let date = evento.start
+    console.log(date)
     date = date.split('-')
     const cardTarefa = `
     <div class="cardColumn">
