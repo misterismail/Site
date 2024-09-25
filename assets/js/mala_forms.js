@@ -1,7 +1,7 @@
-const apiUrl = "https://sanofiapi.onrender.com"
+const apiUrl = "http://localhost:3000"
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
-async function armazenarSolicitacao( motivo, idFuncio, endereco) {
+async function armazenarSolicitacao(motivo, idFuncio, endereco) {
     fetch(apiUrl + '/api/v2/solicitacao', {
         method: 'POST',
         body: JSON.stringify({
@@ -13,11 +13,11 @@ async function armazenarSolicitacao( motivo, idFuncio, endereco) {
             'Content-Type': 'application/json'
         }
     }).then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Erro:', error))
+        .then(data => console.log(data))
+        .catch(error => console.error('Erro:', error))
 }
 
-async function armazenarSolicitacaoEquipamento( idSolic, idEquipamento, quantidade) {
+async function armazenarSolicitacaoEquipamento(idSolic, idEquipamento, quantidade) {
     fetch(apiUrl + '/api/v2/solicitacao/equipamentos', {
         method: 'POST',
         body: JSON.stringify({
@@ -29,9 +29,9 @@ async function armazenarSolicitacaoEquipamento( idSolic, idEquipamento, quantida
             'Content-Type': 'application/json'
         }
     }).then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Erro:', error))
-    
+        .then(data => console.log(data))
+        .catch(error => console.error('Erro:', error))
+
 }
 
 async function fetchSolicit(funcId) {
@@ -40,6 +40,7 @@ async function fetchSolicit(funcId) {
         const funcionarios = await response.json();
 
         const Info = []
+        localStorage.setItem("solicitacoesInfos", JSON.stringify(Info))
 
         if (Array.isArray(funcionarios)) {
             funcionarios.forEach(colectInfo => {
@@ -92,7 +93,7 @@ document.getElementById("btn_EnvioSolicitacao").addEventListener('click', async 
         document.querySelector("#peri01").value,
         document.querySelector("#peri02").value,
         document.querySelector("#peri04").value,
-        document.querySelector("#peri03").value,     
+        document.querySelector("#peri03").value,
         document.querySelector("#peri05").value,
         document.querySelector("#peri06").value
     ]
@@ -110,14 +111,12 @@ document.getElementById("btn_EnvioSolicitacao").addEventListener('click', async 
     let valid3 = motivo != "" ? true : false
     let valid4 = true
     equipamentos.forEach(element => {
-        if (element <= 0 || element == "") {equipamentoValid.push(element)}  
+        if (element <= 0 || element == "") { equipamentoValid.push(element) }
     });
 
     if (equipamentos.length == equipamentoValid.length) {
         valid4 = false
     }
-
-    console.log(valid4)
 
     // if (!valid1) {
     //     document.querySelector("#QTDE_forms").classList.add("erroIten")
@@ -142,33 +141,34 @@ MAX 15 - MIN 0`)
 
     if (!erro) {
 
-        try{
+        try {
             const funcionarioInfo = JSON.parse(localStorage.getItem("funcioInfos")) || []
             let idFuncionario = funcionarioInfo[0]
 
             const solic = JSON.parse(localStorage.getItem("solicitacoesInfos"))
 
-            let confirm = await armazenarSolicitacao(motivo, idFuncionario.id ,endereco)
-            
-            await fetchSolicit(idFuncionario.id)
+            let confirm = await armazenarSolicitacao(motivo, idFuncionario.id, endereco)
+            // await armazenarSolicitacao(motivo, idFuncionario.id, endereco)
+
             if (confirm == "error") {
                 alert("Erro ao enviar o forms...")
                 return
             }
+
+            await fetchSolicit(idFuncionario.id)
             const solicPos = JSON.parse(localStorage.getItem("solicitacoesInfos"))
 
-            if (solic.length != solicPos.length){
-                equipamentos.forEach( async (equip, index) => {
-                    if (equip != 0){
-                        console.log(solic[0].id)
-                        await armazenarSolicitacaoEquipamento(solic[0].id, index+1, equip)
+            if (solic.length != solicPos.length) {
+                equipamentos.forEach(async (equip, index) => {
+                    if (equip != 0) {
+                        await armazenarSolicitacaoEquipamento(solicPos[0].id, (index + 1), equip)
                     }
                 })
             } else {
                 alert("Erro ao enviar o forms...")
                 return
             }
-            
+
             //document.querySelector("#QTDE_forms").value = ""
             document.querySelector("#Endereco_forms").value = ""
             document.querySelector("#Motivo_forms").value = ""

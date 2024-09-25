@@ -1,4 +1,4 @@
-const apiUrl = 'https://sanofiapi.onrender.com' //Pegar link novo
+const apiUrl = 'http://localhost:3000' //Pegar link novo
 //Caso esteja o link de localhost alterar para o seguinte:  https://sanofiapi.onrender.com
 
 async function fetchFuncio(userId) {
@@ -116,7 +116,7 @@ async function fetchEvent(eventId) {
                     obs: colectInfo.OBSERVACAO,
                     area: colectInfo.AREA
                 }
-            Info.push(funcioEvent)
+                Info.push(funcioEvent)
             })
         } else {
             let funcioEvent = {
@@ -158,7 +158,7 @@ async function fetchAprovacao(liderId) {
                     nome: colectInfo.NOME_COMPLETO,
                     email: colectInfo.EMAIL
                 }
-            Info.push(funcioEvent)
+                Info.push(funcioEvent)
             })
         } else {
             let funcioEvent = {
@@ -181,34 +181,34 @@ async function fetchAprovarSolicitacoes(eventId) {
         const response = await fetch(apiUrl + `/api/v2/solicAprov?ids=${eventId}`);
         const aprovarsolic = await response.json();
 
-        if (aprovarsolic.message == 'No aprovacoes found') {
+        console.log(aprovarsolic)
+
+        if (aprovarsolic.message == 'Nenhuma solicitação encontrada.') {
             return
         }
 
         const Info = []
 
-        if (Array.isArray(funcionarios)) {
-            funcionarios.forEach(colectInfo => {
+        if (Array.isArray(aprovarsolic)) {
+            aprovarsolic.forEach(colectInfo => {
                 let solic = {
-                    id: colectInfo.ID_SOLIC,
-                    data: colectInfo.DT_SOLIC,
-                    quant: colectInfo.QUANTIDADE,
-                    motivo: colectInfo.MOTIVO,
-                    prev: colectInfo.PREV_ENTREGA,
-                    status: colectInfo.STATUS,
-                    solicitante: colectInfo.FUNCIONARIOS_ID_FUNC
+                    id: colectInfo.ID_SOLICITACAO,
+                    data: colectInfo.DATA_SOLICITACAO,
+                    motivo: colectInfo.MOTIVO_SOLICITACAO,
+                    equipamentos: colectInfo.EQUIPAMENTOS_SOLICITADOS,
+                    status: colectInfo.STATUS_SOLICITACAO,
+                    solicitante: colectInfo.ID_FUNCIONARIO
                 }
                 Info.push(solic)
             })
         } else {
             let solic = {
-                id: aprovarsolic.ID_SOLIC,
-                data: aprovarsolic.DT_SOLIC,
-                quant: aprovarsolic.QUANTIDADE,
-                motivo: aprovarsolic.MOTIVO,
-                prev: aprovarsolic.PREV_ENTREGA,
-                status: aprovarsolic.STATUS,
-                solicitante: aprovarsolic.FUNCIONARIOS_ID_FUNC
+                id: aprovarsolic.ID_SOLICITACAO,
+                data: aprovarsoliccolectInfo.DATA_SOLICITACAO,
+                motivo: aprovarsoliccolectInfo.MOTIVO_SOLICITACAO,
+                equipamentos: aprovarsolic.EQUIPAMENTOS_SOLICITADOS,
+                status: aprovarsolic.STATUS_SOLICITACAO,
+                solicitante: aprovarsoliccolectInfo.ID_FUNCIONARIO
             }
             Info.push(solic)
         }
@@ -311,17 +311,17 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             await fetchEvent(eventosFuncionarioList)
 
-            await fetchSolicit(idFuncionario.id)
+            // await fetchSolicit(idFuncionario.id)
 
-            await fetchAprovacao(idFuncionario.id)
+            // await fetchAprovacao(idFuncionario.id)
 
-            let lideradosUser = []
-            const liderados = JSON.parse(localStorage.getItem("liderados")) || []
-            liderados.forEach(evento => {
-                lideradosUser.push(evento.liderado)
-            })
-            await fetchAprovarSolicitacoes(lideradosUser)
+            // let lideradosUser = []
+            // const liderados = JSON.parse(localStorage.getItem("liderados")) || []
+            // liderados.forEach(evento => {
+            //     lideradosUser.push(evento.liderado)
+            // })
 
+            // await fetchAprovarSolicitacoes(lideradosUser)
 
             window.location.href = 'Inicio.html'
         }

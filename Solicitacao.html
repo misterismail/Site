@@ -1,114 +1,155 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Solicitações</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/Solicitacao.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/solicSUP.css">
     <script src="./assets/js/exit.js" defer></script>
     <script src="./assets/js/loadingnav.js" defer></script>
+    <script src="./assets/js/solicitacoes.js" defer></script>
 </head>
+
 <body class="home_page">
-            <div class="corpo">
-                <div class="cabecalho">
-                    <div class="barraSuperior"></div>
-                    <div class="info_cabecalho">
-                        <a href="./Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png" alt="alt text" /></a>
-                        <div class="icones_cabecalho">
-                            <a href="./Inicio.html"><img class="voltar" src="./assets/image/voltar.png"></a>                            
-                            <a href="./Usuarios_acessos.html"><img class="perfil" src="./assets/image/perfil.png" alt="alt text" /></a>
-                            <div id="navBar"></div>
-                            <!-- <img class="config" src="./assets/image/config.png" alt="alt text" /> -->
-                            <img class="sair" src="./assets/image/sair.png" alt="alt text" />
-                        </div>
-                    </div>
-                </div>
-                <div class="colunas">
-                    <div class="caixa_botoes">                        
-                        <div class="cadastrar_caixa">
-                            <h1 class="cadastrar_titulo">                                
-                                    SOLICITAÇÕES
-                            </h1>
-                            <div class="botoes">
-                                <color class="verde">APROVAR</color>                                
-                                <a href="" class="a"><color class="roxo">REPROVAR</color></a>                                    
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="caixa_SOLI">                   
-                    <div class="titulos_soli">
-                        <h1 class="nome_titulo">                           
-                                Nome
-                        </h1>                        
-                        <h1 class="mail_titulo">
-                                E-mail
-                        </h1>
-                        <h1 class="setor_titulo">
-                                Setor
-                        </h1>
-                        <h1 class="itens_titulo">
-                                Itens
-                        </h1>
-                    </div>
-                    <div class="linhas_soli">
-                        <input type="checkbox" id='bola_roxa1'/>
-                        <h1 class="nome_linhas">
-                                Cléber Machado
-                        </h1>
-                        <h1 class="mail_linhas">
-                                operação.teste@sanofi.com.br
-                        </h1>
-                        <h1 class="setor_linhas">
-                                Operação
-                        </h1>
-                        <h1 class="itens_linhas">
-                             Mochila Resistente a Água
-                        </h1>
-                    </div>
-                    <div class="linhas_soli">
-                        <input type="checkbox" id='bola_roxa2'/>
-                        <h1 class="nome_linhas">
-                                Manoel de Abreu
-                        </h1>
-                        <h1 class="mail_linhas">
-                                ti.teste@sanofi.com.br
-                        </h1>
-                        <h1 class="setor_linhas">
-                                TI
-                        </h1>
-                        <h1 class="itens_linhas">
-                                Mochila C/ Roda + Carregador Apple + blusa de frio
-                        </h1>
-                    </div>
-                    <div class="linhas_soli">
-                        <input type="checkbox" id='bola_roxa3'/>
-                        <h1 class="nome_linhas">
-                                Caique Oliveira
-                        </h1>
-                        <h1 class="mail_linhas">
-                                marketing.teste@sanofi.com.br
-                        </h1>
-                        <h1 class="setor_linhas">
-                                Marketing
-                        </h1>
-                        <h1 class="itens_linhas">
-                                Iphone 15 Pro MAX + Macbook
-                        </h1>
-                    </div>
+    <div class="corpo">
+        <div class="cabecalho">
+            <div class="barraSuperior"></div>
+            <div class="info_cabecalho">
+                <a href="./Inicio.html"><img class="logoSanofi" src="./assets/image/logoSanofi.png"
+                        alt="alt text" /></a>
+                <div class="icones_cabecalho">
+                    <a href="./Malas.html"><img class="voltar" src="./assets/image/voltar.png"></a>
+                    <img class="perfil" src="./assets/image/perfil.png" alt="alt text" />
+                    <div id="navBar"></div>
+                    <!-- <a href="./Usuarios_acessos.html"><img class="config" src="./assets/image/config.png" alt="alt text" /></a> -->
+                    <a id="exitWorkSpace" href="./index.html"><img class="sair" src="./assets/image/sair.png"
+                            alt="alt text" /></a>
                 </div>
             </div>
-            <div class="rodape">               
-                <div class="barraInferior">
-                    <h1 class="desenvolvidoPor">                      
-                        DEVELOPED BY
+        </div>
+        <div class="colunas">
+            <div class="caixa_botoes">
+                <div class="cadastrar_caixa">
+                    <h1 class="cadastrar_titulo">
+                        SOLICITAÇÕES
                     </h1>
-                    <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
+                    <div class="botoes">
+                        <button class="verde" id="aprovarSolic">APROVAR</button>
+                        <button class="vermelho" id="reprovarSolic">REPROVAR</button>
+                    </div>
+                    <div class="botoes2">
+                        <button class="azul" id="mySolic">Minhas solicitacões</button>
+                        <button class="azul azul2" id="timeSolic">Aprovar Solic. liderados</button>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="caixa_SOLI">
+            <table id="aprovTable">
+                <thead>
+                    <tr>
+                        <th class="inicio select-all">Check Aprov.</th>
+                        <th class="inicio">Data Solicitacao</th>
+                        <th class="inicio">Nome</th>
+                        <th class="inicio">Motivo</th>
+                        <th class="inicio">Quantidade</th>
+                        <th class="inicio">Equipamentos</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable1">
+
+                </tbody>
+            </table>
+            <table id="mySolicTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th class="inicio">Data Solicitacao</th>
+                        <th class="inicio">Motivo</th>
+                        <th class="inicio">Equipamentos</th>
+                        <th class="inicio">Status</th>
+                        <th class="inicio">Data prev. entrega</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable2">
+
+                </tbody>
+            </table>
+            <!-- <div class="titulos_soli">
+                <h1 class="nome_titulo">
+                    Nome
+                </h1>
+                <h1 class="mail_titulo">
+                    E-mail
+                </h1>
+                <h1 class="setor_titulo">
+                    Setor
+                </h1>
+                <h1 class="itens_titulo">
+                    Itens
+                </h1>
+            </div>
+            <div class="linhas_soli">
+                <input type="checkbox" id='bola_roxa1' />
+                <h1 class="nome_linhas">
+                    Cléber Machado
+                </h1>
+                <h1 class="mail_linhas">
+                    operação.teste@sanofi.com.br
+                </h1>
+                <h1 class="setor_linhas">
+                    Operação
+                </h1>
+                <h1 class="itens_linhas">
+                    Mochila Resistente a Água
+                </h1>
+            </div>
+            <div class="linhas_soli">
+                <input type="checkbox" id='bola_roxa2' />
+                <h1 class="nome_linhas">
+                    Manoel de Abreu
+                </h1>
+                <h1 class="mail_linhas">
+                    ti.teste@sanofi.com.br
+                </h1>
+                <h1 class="setor_linhas">
+                    TI
+                </h1>
+                <h1 class="itens_linhas">
+                    Mochila C/ Roda + Carregador Apple + blusa de frio
+                </h1>
+            </div>
+            <div class="linhas_soli">
+                <input type="checkbox" id='bola_roxa3' />
+                <h1 class="nome_linhas">
+                    Caique Oliveira
+                </h1>
+                <h1 class="mail_linhas">
+                    marketing.teste@sanofi.com.br
+                </h1>
+                <h1 class="setor_linhas">
+                    Marketing
+                </h1>
+                <h1 class="itens_linhas">
+                    Iphone 15 Pro MAX + Macbook
+                </h1>
+            </div> -->
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="barraInferior">
+            <h1 class="desenvolvidoPor">
+                DEVELOPED BY
+            </h1>
+            <img class="logoiHumanTech" src="./assets/image/logoiHumanTech.png" alt="alt text" />
+        </div>
+    </div>
 
 
 </body>

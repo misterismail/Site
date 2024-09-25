@@ -1,0 +1,76 @@
+table{
+    width: 100%;
+    margin: 10px auto;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+.inicio {
+    background-color: rgb(218, 218, 218);
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.1s ease;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+#aprovarSolic:active {
+    color: #01881e;
+}
+#reprovarSolic:active {
+    color: rgb(197, 0, 0);
+}
+
+.botoes2 {
+    position:static;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 1vb;
+    margin-top: -6.4vh;
+    margin-left: 10px;
+    width: 98vw;
+    gap: 1.5vb;
+  }
+
+.azul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5vh;
+    width: 21vb;
+    width: 11vw;
+    background-color: rgb(32, 129, 232);
+    border-radius: 15px;
+    font: 400 1.5vw/1.21 "Inria Sans", Helvetica, Arial, serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  #timeSolic:active{
+    color:rgb(28, 105, 188);
+  }
+  #mySolic:active{
+    color:rgb(28, 105, 188);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .azul2{
+    background-color:rgb(4, 46, 90);
+  }
+
+  

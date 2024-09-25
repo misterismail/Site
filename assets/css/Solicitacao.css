@@ -148,12 +148,13 @@
   .botoes {
     position:static;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     padding-right: 1vb;
     margin-top: -5.4vh;
     width: 98vw;
     gap: 1.5vb;
   }
+
   .verde {
     position: relative;
     display: flex;
@@ -168,7 +169,7 @@
     text-align: right;
     text-decoration: none;
   }
-  .roxo {
+  .vermelho {
     position: relative;
     display: flex;
     align-items: center;
@@ -195,6 +196,7 @@
     background-color: white;
     border-radius: 15px;
     outline: 0.5px solid #010101;
+    overflow-y: auto;
   }
   .solicita {
     display: flex;
